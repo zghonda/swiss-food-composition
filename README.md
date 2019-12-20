@@ -46,10 +46,7 @@
 
 <body>
 
-  # Abstract TO DO
 
-
-  ## Food balance
 
   <figure class="highcharts-figure">
     <div id="evolution_by_years"></div>
@@ -73,7 +70,7 @@
   <p>We looked into the kind of food we are used to eat and how much of it actually comes from Switzerland. However, it still remains unknown at this point where the rest of our food comes from.
     Since we already analyzed the evolution of our importations throughout the years, it is interesting here to focus on other dimensions such as the provenance of our importations as well as their proportion.
     For this reason we only study here the most recent data to obtain results that relate to us as much as possible.</p>
-  <!--
+
   <figure class="highcharts-figure">
     <div id="import_map"></div>
     <button class="button" id="overview">Overview</button>
@@ -86,13 +83,14 @@
     <button class="button" id="sugar">Sugar</button>
     <button class="button" id="vegetables">Vegetables</button>
   </figure>
-  -->
+
+
   <figure class="highcharts-figure">
     <div id="sunburst"></div>
 
   </figure>
 
-  ## Impact on Prices
+
 
   <figure class="highcharts-figure">
     <div id="prod_price_maize"></div>
@@ -104,7 +102,7 @@
     <div id="maize_price_evo"></div>
   </figure>
 
-  ## Impact on environment
+
 
   <figure class="highcharts-figure">
     <div id="co2_loss"></div>
@@ -1174,7 +1172,7 @@
     name: "Democratic Republic of the Congo",
     value: 29.0
   }, {
-    name: "C\\u00f4te d\'Ivoire",
+    name: "Côte d'Ivoire",
     value: 27.0
   }, {
     name: "Iran (Islamic Republic of)",
@@ -1463,7 +1461,7 @@
     name: "Bosnia and Herzegovina",
     value: 10.0
   }, {
-    name: "Lao People\'s Democratic Republic",
+    name: "Lao People's Democratic Republic",
     value: 10.0
   }, {
     name: "Morocco",
@@ -1662,7 +1660,7 @@
     name: "Tunisia",
     value: 1619.0
   }, {
-    name: "C\\u00f4te d\'Ivoire",
+    name: "Côte d'Ivoire",
     value: 1335.0
   }, {
     name: "Viet Nam",
@@ -1827,7 +1825,7 @@
     name: "Finland",
     value: 8.0
   }, {
-    name: "Lao People\'s Democratic Republic",
+    name: "Lao People's Democratic Republic",
     value: 8.0
   }, {
     name: "Gambia",
@@ -2256,7 +2254,7 @@
     name: "Sweden",
     value: 6.0
   }, {
-    name: "C\\u00f4te d\'Ivoire",
+    name: "Côte d'Ivoire",
     value: 2.0
   }, {
     name: "Peru",
@@ -3663,7 +3661,7 @@
     },
     tooltip: {
       headerFormat: '',
-      pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+      pointFormat: '<span style="color:{point.color}">.</span> <b> {point.name}</b><br/>' +
         'CO2 Emission: <b>{point.y}</b><br/>' + 'kg/capita/year'
     },
     series: [{
