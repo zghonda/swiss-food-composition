@@ -74,7 +74,7 @@
     Since we already analyzed the evolution of our importations throughout the years, it is interesting here to focus on other dimensions such as the provenance of our importations as well as their proportion.
     For this reason we only study here the most recent data to obtain results that relate to us as much as possible.
   </p>
-  <iframe>
+
   <figure class="highcharts-figure">
     <div id="import_map"></div>
     <button class="button" id="overview">Overview</button>
@@ -87,14 +87,12 @@
     <button class="button" id="sugar">Sugar</button>
     <button class="button" id="vegetables">Vegetables</button>
   </figure>
-  </iframe>
 
-  <iframe>
+
   <figure class="highcharts-figure">
     <div id="sunburst"></div>
 
   </figure>
-  </iframe>
 
 
 
