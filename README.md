@@ -1,122 +1,150 @@
-
-<html lang="en" dir="ltr">
-
-
-  <meta charset="utf-8">
-  <title>Swiss Food From The World</title>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/highcharts-more.js"></script>
-  <script src="https://code.highcharts.com/modules/heatmap.js"></script>
-  <script src="http://code.highcharts.com/maps/modules/map.js"></script>
-  <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
-  <script src="https://code.highcharts.com/modules/sunburst.js"></script>
-  <script src="https://code.highcharts.com/modules/streamgraph.js"></script>
-  <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
-  <script src="https://code.highcharts.com/modules/series-label.js"></script>
-  <script src="https://code.highcharts.com/modules/annotations.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-  <script src="https://code.highcharts.com/maps/modules/data.js"></script>
-  <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+<script src="https://code.highcharts.com/modules/sunburst.js"></script>
+<script src="https://code.highcharts.com/modules/streamgraph.js"></script>
+<script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/annotations.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+<script src="http://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
 
-<head>
-  <style>
-    .button {
-      background-color: #34495E;
-      border: none;
-      border-radius: 2px;
-      color: white;
-      margin: 2px 2px;
-      padding: 8px 8px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 12px;
-    }
+<style>
+  .button {
+    background-color: #34495E;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    margin: 2px 2px;
+    padding: 8px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+  }
+</style>
 
-    #sunburst {
-      maxWidth: 150%;
-    }
-  </style>
-</head>
+## Introduction
 
+Food And Agriculture Organization of the United Nations (FAOSTAT) supplies worldwide reliable data covering many topics: from food security to investment.
+FAOSTAT is composed of around 75 different datasets enabling us to draw the data story with the help of the Eaternity database. For the food carbon emissions data, we had access Eaternity database that was offered to us by Manuel Klarmann, founder & CEO of the eponym project. We deeply thank him for this contribution to our project.
 
-<body>
+## Food balance
 
+<figure class="highcharts-figure">
+  <div id="evolution_by_years"></div>
+  <button class="button" id="consumption">Food Consumption</button>
+  <button class="button" id="import_">Import Quantity</button>
+  <button class="button" id="production">Production</button>
+</figure>
 
+Surprisingly, the total amount of food consumption in Switzerland did not have any noticeable changes during the last 50 years. In the other hand, comparing it by the proportion for each group of products show that the swiss people consume a lot of milk products (around 3 times more than any other group of elements).
 
-  <figure class="highcharts-figure">
-    <div id="evolution_by_years"></div>
-    <button class="button" id="consumption">Food Consumption</button>
-    <button class="button" id="import_">Import Quantity</button>
-    <button class="button" id="production">Production</button>
-  </figure>
+Since there is no flagrant difference in the total amount of consumption over the years, it is interesting to look at the evolution of the import and the production in Switzerland. Importation has quite a lot increased during the last half century by almost doubling the total amount but the amount of production remains stable across the years. This is explained by the increase of the population, from 5.4 millions to 8.1 millions of swiss.
 
-  <figure class="highcharts-figure">
-    <div id="pct_change_by_years"></div>
-    <button class="button" id="consumption_pct">Food Consumption</button>
-    <button class="button" id="import_pct">Import Quantity</button>
-    <button class="button" id="production_pct">Production</button>
-  </figure>
+Thanks to the heatmap on the percentage change for every 10 years, we can clearly observe the evolution for each group of products for the food consumption, the import quantity and the production quantity.  
 
-  <figure class="highcharts-figure">
-    <div id="imp_exp_prod"></div>
-  </figure>
+<figure class="highcharts-figure">
+  <div id="pct_change_by_years"></div>
+  <button class="button" id="consumption_pct">Food Consumption</button>
+  <button class="button" id="import_pct">Import Quantity</button>
+  <button class="button" id="production_pct">Production</button>
+</figure>
 
-  <h2>Food Importation</h2>
-  <p>
-    We looked into the kind of food we are used to eat and how much of it actually comes from Switzerland. However, it still remains unknown at this point where the rest of our food comes from.
-    Since we already analyzed the evolution of our importations throughout the years, it is interesting here to focus on other dimensions such as the provenance of our importations as well as their proportion.
-    For this reason we only study here the most recent data to obtain results that relate to us as much as possible.
+For the consumption, there is some tendencies as a diminution of the meat consumption for the last 30 years and an augmentation in the consumption of the vegetables. Are these tendencies in the favour of the environment ?
+
+An other interesting fact is the proportion between the import quantity and the production for each of the groups of products in Switzerland. In 2013, there is a very large percentage in the production of meat and milk in Switzerland and the only category where the importation is much higher is the fruits.
+
+<figure class="highcharts-figure">
+  <div id="imp_exp_prod"></div>
+</figure>
+
+## Food Importation
+
+<p>We looked into the kind of food we are used to eat and how much of it actually comes from Switzerland. However, it still remains unknown at this point where the rest of our food comes from.
+Since we already analyzed the evolution of our importations throughout the years, it is interesting here to focus on other dimensions such as the provenance of our importations as well as their proportion.
+For this reason we only study here the most recent data to obtain results that relate to us as much as possible.</p>
+<figure class="highcharts-figure">
+  <div id="import_map"></div>
+  <button class="button" id="overview">Overview</button>
+  <button class="button" id="alcohol">Alcohol</button>
+  <button class="button" id="cereals">Cereals</button>
+  <button class="button" id="fruits">Fruits</button>
+  <button class="button" id="meat">Meat</button>
+  <button class="button" id="dairy">Dairy</button>
+  <button class="button" id="starchy">Potatoes</button>
+  <button class="button" id="sugar">Sugar</button>
+  <button class="button" id="vegetables">Vegetables</button>
+</figure>
+
+<p> We can observe from this figure that importations remain in Europe most of the time. That being said, there are still many exceptions for some groups. In particular, cereals, fruits and meat are often imported from Brazil, Canada and even Australia.
   </p>
+<p>The information obtained here only goes as far as groups of items however. This is a choice made for better visualization but it would be nice to have an intuitive tool to deep dive further and see in more details what and where we import our food.
+  This is provided here via a sunburst figure. Feel free to click away and explore if you are more interested.
+</p>
 
-  <!--<figure class="highcharts-figure">
-    <div id="import_map"></div>
-    <button class="button" id="overview">Overview</button>
-    <button class="button" id="alcohol">Alcohol</button>
-    <button class="button" id="cereals">Cereals</button>
-    <button class="button" id="fruits">Fruits</button>
-    <button class="button" id="meat">Meat</button>
-    <button class="button" id="dairy">Dairy</button>
-    <button class="button" id="starchy">Potatoes</button>
-    <button class="button" id="sugar">Sugar</button>
-    <button class="button" id="vegetables">Vegetables</button>
-  </figure>
+<figure class="highcharts-figure">
+  <div id="sunburst"></div>
+</figure>
+
+<p>
+  What we learn here is that Switzerland makes efforts to sustain itself by importing food mostly from the neighbouring countries. Despite that, we still have a lot of importations from countries all around the world. We have to ask ourselves why this is necessary and how much of an impact we create on the environment and the economy.
+</p>
+
+## Impact on Prices
+
+To decide whether the importations have a clear impact on our society or not, we will introduce another parameter: the producer price which is the money received to farmers after the production of their products. When looking further into the «sunburst»,  maize appears to have diverse origins of importations, high importation quantity and  varying quantity of importations over time. Let’s then analyse it and dive into the maize world …
+
+To have a worldwide representation of maize producer price, we decided to compare it’s Switzerland price with different country groups, from lower to upper income economies.  This notion is shown in the plot below where we notice a high producer price in Switzerland compare to the different groups around 1991-1996, as the height of the Switzerland (black) area is much bigger than the country groups. Then progressively, over the years we notice a balance producer prices between all countries and Switzerland; upper middle income countries prices are even getting higher.
+Is it because Switzerland prices fall of or because countries groups prices went up, or both ?
+
+<figure class="highcharts-figure">
+  <div id="prod_price_maize"></div>
+  <p class="highcharts-description">
+  </p>
+</figure>
+
+The answer can easily be understood by looking into the next plot showing the evolution maize price per country group. Indeed, both Switzerland maize prices went down, reaching a minimum producer price around year 2001(50% less) and country groups prices went up. In fact, Lower and upper middle income countries have even double there prices in few years.
+But how could we explain such a phenomenon since Swiss people still like food and are still rich.
+
+<figure class="highcharts-figure">
+  <div id="maize_price_evo"></div>
+</figure>
+
+A possible explication lies in the next plot where we compare the evolution of the quantity of importation/exportation of maize in Switzerland with the producer prices.
+In this plot, we normalized the prices with the inflation rate since we do not want that a increase in the general price level of goods and services involves a increase in the producer price.
+Even if the quantity of imported maize is way more than the exported one, we still can observe an increasing of the producer prices when there is fast increase of the exportation. It appears around year 2002.
+But what could  be the long term reason for a decreasing maize producer price in Switzerland is the increase of their imported quantity over the 15 last years. Indeed, the quantity of imported maize increased by a bit less than 400%  which place the maize importation at one of the most imported Item in 2017. We can see it when looking at the sunburst plot.
+
+<figure class="highcharts-figure">
+  <div id="price_import_pct"></div>
+</figure>
+
+## Impact on environment
+
+For the sake of studying the Swiss Food carbon footprint, we base our analysis on the most consumed ingredients in the country regrouped together to form the following pie chart where we present a description of what is the part of each group of ingredients is taking in carbon emissions.
 
 
-  <figure class="highcharts-figure">
-    <div id="sunburst"></div>
-
-  </figure>
-  -->
+<figure class="highcharts-figure">
+  <div id="footprint"></div>
+</figure>
 
 
-  <figure class="highcharts-figure">
-    <div id="prod_price_maize"></div>
-    <p class="highcharts-description">
-    </p>
-  </figure>
+2.5 tonnes per person each year is a shocking number, indeed we didn't expect to see this result as the meat is known to be the most CO2 carbon releasing.
+It is interesting to see how the dependence on the milk products in Switzerland can have a serious impact on the environment. We need to mention that to generate those numbers we use the amount of food that is available to the swiss industry and to the population. This way, the fact that there's more food supplied to the market than the consumers need is taken into consideration
 
-  <figure class="highcharts-figure">
-    <div id="maize_price_evo"></div>
-  </figure>
+Following up with the previous analysis on the food consumption, it is true that we eat more and more fruits and vegetables and less meat but with the above result we discover that this new meat banning trend is definitely not enough to reduce the swiss carbon footprint. The milk industry is the one to fight since the production, transport, conservation and distribution of the milk and its products is high energy demanding.
 
-
-
-  <figure class="highcharts-figure">
-    <div id="co2_loss"></div>
-  </figure>
-
-  <figure class="highcharts-figure">
-    <div id="footprint"></div>
-  </figure>
-</body>
-
+And on this bombshell it is time to end this discussion …
 
 <script>
   var chart = Highcharts.chart('evolution_by_years', {
@@ -925,7 +953,8 @@
     });
   });
 
-  var overview = [{
+  var overview = [
+  {
     name: "France",
     value: 4.0
   }, {
@@ -1001,7 +1030,8 @@
     name: "New Zealand",
     value: 3.0
   }];
-  var cereals = [{
+  var cereals = [
+  {
     name: "Germany",
     value: 372343.0
   }, {
@@ -1176,7 +1206,7 @@
     name: "Democratic Republic of the Congo",
     value: 29.0
   }, {
-    name: "Côte d'Ivoire",
+    name: "C\\u00f4te d\'Ivoire",
     value: 27.0
   }, {
     name: "Iran (Islamic Republic of)",
@@ -1272,7 +1302,8 @@
     name: "Algeria",
     value: 1.0
   }];
-  var alcohol = [{
+  var alcohol = [
+  {
     name: "Italy",
     value: 86320.0
   }, {
@@ -1465,7 +1496,7 @@
     name: "Bosnia and Herzegovina",
     value: 10.0
   }, {
-    name: "Lao People's Democratic Republic",
+    name: "Lao People\'s Democratic Republic",
     value: 10.0
   }, {
     name: "Morocco",
@@ -1555,7 +1586,8 @@
     name: "Bermuda",
     value: 1.0
   }];
-  var fruits = [{
+  var fruits = [
+  {
     name: "Spain",
     value: 186537.0
   }, {
@@ -1664,7 +1696,7 @@
     name: "Tunisia",
     value: 1619.0
   }, {
-    name: "Côte d'Ivoire",
+    name: "C\\u00f4te d\'Ivoire",
     value: 1335.0
   }, {
     name: "Viet Nam",
@@ -1829,7 +1861,7 @@
     name: "Finland",
     value: 8.0
   }, {
-    name: "Lao People's Democratic Republic",
+    name: "Lao People\'s Democratic Republic",
     value: 8.0
   }, {
     name: "Gambia",
@@ -1895,7 +1927,8 @@
     name: "Nigeria",
     value: 1.0
   }];
-  var meat = [{
+  var meat = [
+  {
     name: "Germany",
     value: 21271.0
   }, {
@@ -2037,7 +2070,8 @@
     name: "China, Taiwan Province of",
     value: 1.0
   }];
-  var dairy = [{
+  var dairy = [
+  {
     name: "France",
     value: 41556.0
   }, {
@@ -2140,7 +2174,8 @@
     name: "Japan",
     value: 1.0
   }];
-  var starchy = [{
+  var starchy = [
+  {
     name: "Netherlands",
     value: 20354.0
   }, {
@@ -2258,7 +2293,7 @@
     name: "Sweden",
     value: 6.0
   }, {
-    name: "Côte d'Ivoire",
+    name: "C\\u00f4te d\'Ivoire",
     value: 2.0
   }, {
     name: "Peru",
@@ -2282,7 +2317,8 @@
     name: "Colombia",
     value: 1.0
   }];
-  var sugar = [{
+  var sugar = [
+  {
     name: "Germany",
     value: 104324.0
   }, {
@@ -2550,7 +2586,8 @@
     name: "Senegal",
     value: 1.0
   }];
-  var vegetables = [{
+  var vegetables = [
+  {
     name: "Spain",
     value: 110014.0
   }, {
@@ -3572,90 +3609,6 @@
 
   });
 
-  Highcharts.chart('co2_loss', {
-    chart: {
-      type: 'area'
-    },
-    title: {
-      text: 'Agriculture Loss in CO2 Equivalence  '
-    },
-
-    xAxis: {
-      categories: [
-        1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971,
-        1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982,
-        1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993,
-        1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
-        2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013
-      ],
-      tickmarkPlacement: 'on',
-      title: {
-        enabled: false
-      }
-    },
-    yAxis: {
-      title: {
-        text: '1000 tonnes'
-      },
-
-    },
-    tooltip: {
-      split: true,
-      valueSuffix: 'k ',
-
-    },
-    plotOptions: {
-      area: {
-        stacking: 'normal',
-        lineColor: '#666666',
-        lineWidth: 1,
-        marker: {
-          enabled: false
-        }
-      }
-    },
-    series: [{
-      name: 'Starchy Roots',
-      data: [57.33, 36.78, 33.53, 21.63, 22.71, 43.27, 40.02, 23.8, 21.63,
-        48.67, 51.92, 25.96, 42.18, 18.39, 19.47, 20.55, 16.22, 30.29,
-        16.22, 32.45, 64.9, 38.94, 58.41, 71.39, 50.84, 27.04, 24.88,
-        27.04, 27.04, 25.96, 17.31, 23.8, 22.71, 22.71, 22.71, 23.8,
-        22.71, 22.71, 21.63, 21.63, 19.47, 21.63, 22.71, 24.88, 22.71,
-        22.71, 23.8, 23.8, 27.04, 27.04, 30.29, 29.2, 28.12
-      ]
-
-    }, {
-      name: 'Fruits',
-      data: [13.26, 18.95, 13.26, 17.05, 16.1, 16.1, 18.95, 18.95, 17.05,
-        18, 21.79, 19.89, 21.79, 23.68, 21.79, 22.74, 19.89, 23.68,
-        26.53, 23.68, 24.63, 28.42, 27.47, 32.21, 30.31, 27.47, 26.53,
-        33.16, 32.21, 29.37, 28.42, 31.26, 43.58, 36.95, 36.95, 36,
-        36.95, 29.37, 32.21, 35.05, 35.05, 35.05, 35.05, 39.79, 44.52,
-        69.15, 54.94, 58.73, 63.47, 60.63, 48.31, 75.79, 82.42
-      ]
-    }, {
-
-      name: 'Vegetables',
-      data: [40.81, 46.46, 42.69, 42.69, 42.07, 52.11, 47.09, 47.09, 57.13,
-        46.46, 35.79, 55.25, 28.88, 39.55, 35.16, 28.25, 30.14, 26.37,
-        25.11, 26.37, 21.97, 41.44, 21.35, 35.16, 23.23, 21.35, 40.81,
-        37.67, 52.74, 50.86, 43.32, 51.48, 28.25, 40.18, 32.02, 35.16,
-        23.86, 33.9, 36.41, 26.37, 21.97, 16.32, 16.32, 16.95, 16.32,
-        16.95, 35.16, 20.09, 27.63, 12.56, 14.44, 13.18, 13.81
-      ]
-    }, {
-      name: 'Cereals',
-      data: [12.64, 11.55, 12.64, 12.37, 9.24, 10.74, 11.42, 11.15, 9.92,
-        9.92, 11.15, 8.43, 9.24, 9.52, 9.24, 7.88, 7.2, 9.11,
-        8.84, 8.7, 10.74, 9.79, 7.2, 9.38, 8.29, 7.61, 6.66,
-        8.56, 7.88, 7.2, 6.8, 11.42, 11.69, 8.56, 8.56, 9.52,
-        9.24, 7.61, 6.53, 8.16, 6.8, 7.07, 6.12, 6.8, 6.53,
-        3.67, 4.35, 3.4, 3.67, 2.72, 4.35, 1.9, 2.04
-      ]
-
-    }]
-  });
-
   Highcharts.chart('footprint', {
     chart: {
       type: 'variablepie'
@@ -3665,7 +3618,7 @@
     },
     tooltip: {
       headerFormat: '',
-      pointFormat: '<span style="color:{point.color}">.</span> <b> {point.name}</b><br/>' +
+      pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
         'CO2 Emission: <b>{point.y}</b><br/>' + 'kg/capita/year'
     },
     series: [{
@@ -3712,1495 +3665,1586 @@
 
   // Splice in transparent for the center circle
 
-  Highcharts.chart('sunburst', {
+Highcharts.chart('sunburst', {
 
-    title: {
-      text: 'Switzerland Importations 2017'
-    },
+  title: {
+    text: 'Switzerland Importations 2017'
+  },
 
-    subtitle: {
-      text: 'Click on some part of the figure for more information'
-    },
+  subtitle: {
+    text: 'Click on some part of the figure for more information'
+  },
 
-    series: [{
-      type: "sunburst",
-      data: [{
-        id: "0",
-        parent: "999",
-        name: "Alcohol",
-        value: 293899.0
-      }, {
-        id: "1",
-        parent: "999",
-        name: "Cereals",
-        value: 1141459.0
-      }, {
-        id: "2",
-        parent: "999",
-        name: "Fruits",
-        value: 537624.0
-      }, {
-        id: "3",
-        parent: "999",
-        name: "Meat",
-        value: 86829.0
-      }, {
-        id: "4",
-        parent: "999",
-        name: "Milk",
-        value: 107069.0
-      }, {
-        id: "5",
-        parent: "999",
-        name: "Starchy Roots",
-        value: 57187.0
-      }, {
-        id: "6",
-        parent: "999",
-        name: "Sugar",
-        value: 420544.0
-      }, {
-        id: "7",
-        parent: "999",
-        name: "Vegetables",
-        value: 270081.0
-      }, {
-        id: "0.0",
-        parent: "0",
-        name: "Beer",
-        value: 99820.0
-      }, {
-        id: "0.1",
-        parent: "0",
-        name: "Beverages, Alcoholic",
-        value: 17233.0
-      }, {
-        id: "0.2",
-        parent: "0",
-        name: "Beverages, Fermented",
-        value: 6817.0
-      }, {
-        id: "0.3",
-        parent: "0",
-        name: "Wine",
-        value: 170029.0
-      }, {
-        id: "1.4",
-        parent: "1",
-        name: "Barley",
-        value: 143872.0
-      }, {
-        id: "1.5",
-        parent: "1",
-        name: "Other",
-        value: 9211.0
-      }, {
-        id: "1.6",
-        parent: "1",
-        name: "Maize",
-        value: 191865.0
-      }, {
-        id: "1.7",
-        parent: "1",
-        name: "Millet",
-        value: 1355.0
-      }, {
-        id: "1.8",
-        parent: "1",
-        name: "Oats",
-        value: 51053.0
-      }, {
-        id: "1.9",
-        parent: "1",
-        name: "Rice (Milled Equivalent)",
-        value: 106619.0
-      }, {
-        id: "1.10",
-        parent: "1",
-        name: "Rye",
-        value: 2776.0
-      }, {
-        id: "1.11",
-        parent: "1",
-        name: "Sorghum",
-        value: 164.0
-      }, {
-        id: "1.12",
-        parent: "1",
-        name: "Wheat",
-        value: 634544.0
-      }, {
-        id: "2.13",
-        parent: "2",
-        name: "Apples",
-        value: 13685.0
-      }, {
-        id: "2.14",
-        parent: "2",
-        name: "Bananas",
-        value: 88434.0
-      }, {
-        id: "2.15",
-        parent: "2",
-        name: "Citrus, Other",
-        value: 4257.0
-      }, {
-        id: "2.16",
-        parent: "2",
-        name: "Dates",
-        value: 2545.0
-      }, {
-        id: "2.17",
-        parent: "2",
-        name: "Other",
-        value: 190799.0
-      }, {
-        id: "2.18",
-        parent: "2",
-        name: "Grapefruit",
-        value: 7775.0
-      }, {
-        id: "2.19",
-        parent: "2",
-        name: "Grapes",
-        value: 42146.0
-      }, {
-        id: "2.20",
-        parent: "2",
-        name: "Lemons, Limes",
-        value: 24848.0
-      }, {
-        id: "2.21",
-        parent: "2",
-        name: "Oranges, Mandarines",
-        value: 135173.0
-      }, {
-        id: "2.22",
-        parent: "2",
-        name: "Pineapples",
-        value: 26531.0
-      }, {
-        id: "2.23",
-        parent: "2",
-        name: "Plantains",
-        value: 1431.0
-      }, {
-        id: "3.24",
-        parent: "3",
-        name: "Bovine Meat",
-        value: 20500.0
-      }, {
-        id: "3.25",
-        parent: "3",
-        name: "Meat, Other",
-        value: 4179.0
-      }, {
-        id: "3.26",
-        parent: "3",
-        name: "Mutton & Goat Meat",
-        value: 6397.0
-      }, {
-        id: "3.27",
-        parent: "3",
-        name: "Pigmeat",
-        value: 10079.0
-      }, {
-        id: "3.28",
-        parent: "3",
-        name: "Poultry Meat",
-        value: 45674.0
-      }, {
-        id: "4.29",
-        parent: "4",
-        name: "Milk - Excluding Butter",
-        value: 107069.0
-      }, {
-        id: "5.30",
-        parent: "5",
-        name: "Cassava",
-        value: 1121.0
-      }, {
-        id: "5.31",
-        parent: "5",
-        name: "Potatoes",
-        value: 52525.0
-      }, {
-        id: "5.32",
-        parent: "5",
-        name: "Roots, Other",
-        value: 186.0
-      }, {
-        id: "5.33",
-        parent: "5",
-        name: "Sweet potatoes",
-        value: 3355.0
-      }, {
-        id: "6.34",
-        parent: "6",
-        name: "Honey",
-        value: 6791.0
-      }, {
-        id: "6.35",
-        parent: "6",
-        name: "Sugar (Raw Equivalent)",
-        value: 97087.0
-      }, {
-        id: "6.36",
-        parent: "6",
-        name: "Sweeteners, Other",
-        value: 316666.0
-      }, {
-        id: "7.37",
-        parent: "7",
-        name: "Onions",
-        value: 3863.0
-      }, {
-        id: "7.38",
-        parent: "7",
-        name: "Tomatoes",
-        value: 78308.0
-      }, {
-        id: "7.39",
-        parent: "7",
-        name: "Vegetables, Other",
-        value: 187910.0
-      }, {
-        id: "0.0.0",
-        parent: "0.0",
-        name: "Germany",
-        value: 49586.0
-      }, {
-        id: "0.0.1",
-        parent: "0.0",
-        name: "Portugal",
-        value: 20359.0
-      }, {
-        id: "0.0.2",
-        parent: "0.0",
-        name: "Netherlands",
-        value: 11319.0
-      }, {
-        id: "0.0.3",
-        parent: "0.0",
-        name: "France",
-        value: 9872.0
-      }, {
-        id: "0.0.4",
-        parent: "0.0",
-        name: "Mexico",
-        value: 5413.0
-      }, {
-        id: "0.0.5",
-        parent: "0.0",
-        name: "Italy",
-        value: 3271.0
-      }, {
-        id: "0.1.6",
-        parent: "0.1",
-        name: "Italy",
-        value: 5781.0
-      }, {
-        id: "0.1.7",
-        parent: "0.1",
-        name: "United Kingdom",
-        value: 4014.0
-      }, {
-        id: "0.1.8",
-        parent: "0.1",
-        name: "Germany",
-        value: 3550.0
-      }, {
-        id: "0.1.9",
-        parent: "0.1",
-        name: "France",
-        value: 2052.0
-      }, {
-        id: "0.1.10",
-        parent: "0.1",
-        name: "United States of America",
-        value: 1173.0
-      }, {
-        id: "0.1.11",
-        parent: "0.1",
-        name: "Ireland",
-        value: 663.0
-      }, {
-        id: "0.2.12",
-        parent: "0.2",
-        name: "Germany",
-        value: 4150.0
-      }, {
-        id: "0.2.13",
-        parent: "0.2",
-        name: "Belgium",
-        value: 708.0
-      }, {
-        id: "0.2.14",
-        parent: "0.2",
-        name: "France",
-        value: 696.0
-      }, {
-        id: "0.2.15",
-        parent: "0.2",
-        name: "Italy",
-        value: 619.0
-      }, {
-        id: "0.2.16",
-        parent: "0.2",
-        name: "Ireland",
-        value: 354.0
-      }, {
-        id: "0.2.17",
-        parent: "0.2",
-        name: "Austria",
-        value: 290.0
-      }, {
-        id: "0.3.18",
-        parent: "0.3",
-        name: "Italy",
-        value: 76649.0
-      }, {
-        id: "0.3.19",
-        parent: "0.3",
-        name: "France",
-        value: 39632.0
-      }, {
-        id: "0.3.20",
-        parent: "0.3",
-        name: "Spain",
-        value: 31445.0
-      }, {
-        id: "0.3.21",
-        parent: "0.3",
-        name: "Portugal",
-        value: 10638.0
-      }, {
-        id: "0.3.22",
-        parent: "0.3",
-        name: "Germany",
-        value: 7152.0
-      }, {
-        id: "0.3.23",
-        parent: "0.3",
-        name: "South Africa",
-        value: 4513.0
-      }, {
-        id: "1.4.24",
-        parent: "1.4",
-        name: "Germany",
-        value: 65947.0
-      }, {
-        id: "1.4.25",
-        parent: "1.4",
-        name: "France",
-        value: 46399.0
-      }, {
-        id: "1.4.26",
-        parent: "1.4",
-        name: "Hungary",
-        value: 15937.0
-      }, {
-        id: "1.4.27",
-        parent: "1.4",
-        name: "Czechia",
-        value: 9819.0
-      }, {
-        id: "1.4.28",
-        parent: "1.4",
-        name: "Slovakia",
-        value: 3346.0
-      }, {
-        id: "1.4.29",
-        parent: "1.4",
-        name: "Austria",
-        value: 2424.0
-      }, {
-        id: "1.5.30",
-        parent: "1.5",
-        name: "Italy",
-        value: 6100.0
-      }, {
-        id: "1.5.31",
-        parent: "1.5",
-        name: "Germany",
-        value: 1342.0
-      }, {
-        id: "1.5.32",
-        parent: "1.5",
-        name: "Bolivia (Plurinational State of)",
-        value: 708.0
-      }, {
-        id: "1.5.33",
-        parent: "1.5",
-        name: "France",
-        value: 440.0
-      }, {
-        id: "1.5.34",
-        parent: "1.5",
-        name: "Austria",
-        value: 343.0
-      }, {
-        id: "1.5.35",
-        parent: "1.5",
-        name: "China, mainland",
-        value: 278.0
-      }, {
-        id: "1.6.36",
-        parent: "1.6",
-        name: "France",
-        value: 73435.0
-      }, {
-        id: "1.6.37",
-        parent: "1.6",
-        name: "Germany",
-        value: 46320.0
-      }, {
-        id: "1.6.38",
-        parent: "1.6",
-        name: "China, mainland",
-        value: 32735.0
-      }, {
-        id: "1.6.39",
-        parent: "1.6",
-        name: "Romania",
-        value: 17881.0
-      }, {
-        id: "1.6.40",
-        parent: "1.6",
-        name: "Hungary",
-        value: 11491.0
-      }, {
-        id: "1.6.41",
-        parent: "1.6",
-        name: "Slovakia",
-        value: 10003.0
-      }, {
-        id: "1.7.42",
-        parent: "1.7",
-        name: "Austria",
-        value: 564.0
-      }, {
-        id: "1.7.43",
-        parent: "1.7",
-        name: "Hungary",
-        value: 294.0
-      }, {
-        id: "1.7.44",
-        parent: "1.7",
-        name: "Germany",
-        value: 261.0
-      }, {
-        id: "1.7.45",
-        parent: "1.7",
-        name: "France",
-        value: 105.0
-      }, {
-        id: "1.7.46",
-        parent: "1.7",
-        name: "Ukraine",
-        value: 89.0
-      }, {
-        id: "1.7.47",
-        parent: "1.7",
-        name: "Netherlands",
-        value: 42.0
-      }, {
-        id: "1.8.48",
-        parent: "1.8",
-        name: "Finland",
-        value: 20863.0
-      }, {
-        id: "1.8.49",
-        parent: "1.8",
-        name: "Germany",
-        value: 15170.0
-      }, {
-        id: "1.8.50",
-        parent: "1.8",
-        name: "France",
-        value: 6809.0
-      }, {
-        id: "1.8.51",
-        parent: "1.8",
-        name: "Czechia",
-        value: 4233.0
-      }, {
-        id: "1.8.52",
-        parent: "1.8",
-        name: "Sweden",
-        value: 2639.0
-      }, {
-        id: "1.8.53",
-        parent: "1.8",
-        name: "Austria",
-        value: 1339.0
-      }, {
-        id: "1.9.54",
-        parent: "1.9",
-        name: "Brazil",
-        value: 48721.0
-      }, {
-        id: "1.9.55",
-        parent: "1.9",
-        name: "Italy",
-        value: 24678.0
-      }, {
-        id: "1.9.56",
-        parent: "1.9",
-        name: "Thailand",
-        value: 14446.0
-      }, {
-        id: "1.9.57",
-        parent: "1.9",
-        name: "India",
-        value: 7781.0
-      }, {
-        id: "1.9.58",
-        parent: "1.9",
-        name: "Russian Federation",
-        value: 6842.0
-      }, {
-        id: "1.9.59",
-        parent: "1.9",
-        name: "Uruguay",
-        value: 4151.0
-      }, {
-        id: "1.10.60",
-        parent: "1.10",
-        name: "Austria",
-        value: 1203.0
-      }, {
-        id: "1.10.61",
-        parent: "1.10",
-        name: "Germany",
-        value: 947.0
-      }, {
-        id: "1.10.62",
-        parent: "1.10",
-        name: "Ukraine",
-        value: 330.0
-      }, {
-        id: "1.10.63",
-        parent: "1.10",
-        name: "Serbia",
-        value: 182.0
-      }, {
-        id: "1.10.64",
-        parent: "1.10",
-        name: "United Kingdom",
-        value: 62.0
-      }, {
-        id: "1.10.65",
-        parent: "1.10",
-        name: "Lithuania",
-        value: 52.0
-      }, {
-        id: "1.11.66",
-        parent: "1.11",
-        name: "Italy",
-        value: 102.0
-      }, {
-        id: "1.11.67",
-        parent: "1.11",
-        name: "France",
-        value: 50.0
-      }, {
-        id: "1.11.68",
-        parent: "1.11",
-        name: "Russian Federation",
-        value: 9.0
-      }, {
-        id: "1.11.69",
-        parent: "1.11",
-        name: "Argentina",
-        value: 1.0
-      }, {
-        id: "1.11.70",
-        parent: "1.11",
-        name: "Austria",
-        value: 1.0
-      }, {
-        id: "1.11.71",
-        parent: "1.11",
-        name: "Germany",
-        value: 1.0
-      }, {
-        id: "1.12.72",
-        parent: "1.12",
-        name: "Germany",
-        value: 240304.0
-      }, {
-        id: "1.12.73",
-        parent: "1.12",
-        name: "France",
-        value: 141816.0
-      }, {
-        id: "1.12.74",
-        parent: "1.12",
-        name: "Austria",
-        value: 80452.0
-      }, {
-        id: "1.12.75",
-        parent: "1.12",
-        name: "Canada",
-        value: 60689.0
-      }, {
-        id: "1.12.76",
-        parent: "1.12",
-        name: "Italy",
-        value: 60283.0
-      }, {
-        id: "1.12.77",
-        parent: "1.12",
-        name: "Hungary",
-        value: 51000.0
-      }, {
-        id: "2.13.78",
-        parent: "2.13",
-        name: "Italy",
-        value: 7178.0
-      }, {
-        id: "2.13.79",
-        parent: "2.13",
-        name: "Germany",
-        value: 2506.0
-      }, {
-        id: "2.13.80",
-        parent: "2.13",
-        name: "New Zealand",
-        value: 1630.0
-      }, {
-        id: "2.13.81",
-        parent: "2.13",
-        name: "France",
-        value: 1078.0
-      }, {
-        id: "2.13.82",
-        parent: "2.13",
-        name: "Chile",
-        value: 819.0
-      }, {
-        id: "2.13.83",
-        parent: "2.13",
-        name: "Belgium",
-        value: 474.0
-      }, {
-        id: "2.14.84",
-        parent: "2.14",
-        name: "Colombia",
-        value: 38634.0
-      }, {
-        id: "2.14.85",
-        parent: "2.14",
-        name: "Panama",
-        value: 18585.0
-      }, {
-        id: "2.14.86",
-        parent: "2.14",
-        name: "Ecuador",
-        value: 11576.0
-      }, {
-        id: "2.14.87",
-        parent: "2.14",
-        name: "Peru",
-        value: 9287.0
-      }, {
-        id: "2.14.88",
-        parent: "2.14",
-        name: "Costa Rica",
-        value: 5584.0
-      }, {
-        id: "2.14.89",
-        parent: "2.14",
-        name: "Dominican Republic",
-        value: 4768.0
-      }, {
-        id: "2.15.90",
-        parent: "2.15",
-        name: "Italy",
-        value: 3212.0
-      }, {
-        id: "2.15.91",
-        parent: "2.15",
-        name: "Argentina",
-        value: 399.0
-      }, {
-        id: "2.15.92",
-        parent: "2.15",
-        name: "France",
-        value: 268.0
-      }, {
-        id: "2.15.93",
-        parent: "2.15",
-        name: "Peru",
-        value: 159.0
-      }, {
-        id: "2.15.94",
-        parent: "2.15",
-        name: "Brazil",
-        value: 117.0
-      }, {
-        id: "2.15.95",
-        parent: "2.15",
-        name: "Uruguay",
-        value: 102.0
-      }, {
-        id: "2.16.96",
-        parent: "2.16",
-        name: "Tunisia",
-        value: 1280.0
-      }, {
-        id: "2.16.97",
-        parent: "2.16",
-        name: "Israel",
-        value: 646.0
-      }, {
-        id: "2.16.98",
-        parent: "2.16",
-        name: "United States of America",
-        value: 373.0
-      }, {
-        id: "2.16.99",
-        parent: "2.16",
-        name: "Netherlands",
-        value: 108.0
-      }, {
-        id: "2.16.100",
-        parent: "2.16",
-        name: "Iran (Islamic Republic of)",
-        value: 78.0
-      }, {
-        id: "2.16.101",
-        parent: "2.16",
-        name: "Algeria",
-        value: 60.0
-      }, {
-        id: "2.17.102",
-        parent: "2.17",
-        name: "Spain",
-        value: 86480.0
-      }, {
-        id: "2.17.103",
-        parent: "2.17",
-        name: "Italy",
-        value: 50415.0
-      }, {
-        id: "2.17.104",
-        parent: "2.17",
-        name: "France",
-        value: 23463.0
-      }, {
-        id: "2.17.105",
-        parent: "2.17",
-        name: "Germany",
-        value: 11859.0
-      }, {
-        id: "2.17.106",
-        parent: "2.17",
-        name: "Peru",
-        value: 9752.0
-      }, {
-        id: "2.17.107",
-        parent: "2.17",
-        name: "South Africa",
-        value: 8830.0
-      }, {
-        id: "2.18.108",
-        parent: "2.18",
-        name: "South Africa",
-        value: 1786.0
-      }, {
-        id: "2.18.109",
-        parent: "2.18",
-        name: "United States of America",
-        value: 1726.0
-      }, {
-        id: "2.18.110",
-        parent: "2.18",
-        name: "Spain",
-        value: 1546.0
-      }, {
-        id: "2.18.111",
-        parent: "2.18",
-        name: "Israel",
-        value: 1400.0
-      }, {
-        id: "2.18.112",
-        parent: "2.18",
-        name: "France",
-        value: 688.0
-      }, {
-        id: "2.18.113",
-        parent: "2.18",
-        name: "China, mainland",
-        value: 629.0
-      }, {
-        id: "2.19.114",
-        parent: "2.19",
-        name: "Italy",
-        value: 30709.0
-      }, {
-        id: "2.19.115",
-        parent: "2.19",
-        name: "France",
-        value: 3258.0
-      }, {
-        id: "2.19.116",
-        parent: "2.19",
-        name: "South Africa",
-        value: 2945.0
-      }, {
-        id: "2.19.117",
-        parent: "2.19",
-        name: "Turkey",
-        value: 2767.0
-      }, {
-        id: "2.19.118",
-        parent: "2.19",
-        name: "India",
-        value: 1664.0
-      }, {
-        id: "2.19.119",
-        parent: "2.19",
-        name: "Spain",
-        value: 803.0
-      }, {
-        id: "2.20.120",
-        parent: "2.20",
-        name: "Spain",
-        value: 16484.0
-      }, {
-        id: "2.20.121",
-        parent: "2.20",
-        name: "Brazil",
-        value: 2568.0
-      }, {
-        id: "2.20.122",
-        parent: "2.20",
-        name: "Italy",
-        value: 2523.0
-      }, {
-        id: "2.20.123",
-        parent: "2.20",
-        name: "South Africa",
-        value: 1867.0
-      }, {
-        id: "2.20.124",
-        parent: "2.20",
-        name: "Mexico",
-        value: 729.0
-      }, {
-        id: "2.20.125",
-        parent: "2.20",
-        name: "Argentina",
-        value: 677.0
-      }, {
-        id: "2.21.126",
-        parent: "2.21",
-        name: "Spain",
-        value: 80401.0
-      }, {
-        id: "2.21.127",
-        parent: "2.21",
-        name: "Italy",
-        value: 20565.0
-      }, {
-        id: "2.21.128",
-        parent: "2.21",
-        name: "Brazil",
-        value: 19026.0
-      }, {
-        id: "2.21.129",
-        parent: "2.21",
-        name: "South Africa",
-        value: 7083.0
-      }, {
-        id: "2.21.130",
-        parent: "2.21",
-        name: "France",
-        value: 5242.0
-      }, {
-        id: "2.21.131",
-        parent: "2.21",
-        name: "Israel",
-        value: 2856.0
-      }, {
-        id: "2.22.132",
-        parent: "2.22",
-        name: "Costa Rica",
-        value: 16590.0
-      }, {
-        id: "2.22.133",
-        parent: "2.22",
-        name: "Thailand",
-        value: 4386.0
-      }, {
-        id: "2.22.134",
-        parent: "2.22",
-        name: "Ghana",
-        value: 2215.0
-      }, {
-        id: "2.22.135",
-        parent: "2.22",
-        name: "Indonesia",
-        value: 1760.0
-      }, {
-        id: "2.22.136",
-        parent: "2.22",
-        name: "Ecuador",
-        value: 880.0
-      }, {
-        id: "2.22.137",
-        parent: "2.22",
-        name: "Panama",
-        value: 700.0
-      }, {
-        id: "2.23.138",
-        parent: "2.23",
-        name: "Ecuador",
-        value: 1202.0
-      }, {
-        id: "2.23.139",
-        parent: "2.23",
-        name: "Colombia",
-        value: 165.0
-      }, {
-        id: "2.23.140",
-        parent: "2.23",
-        name: "Uganda",
-        value: 47.0
-      }, {
-        id: "2.23.141",
-        parent: "2.23",
-        name: "Sri Lanka",
-        value: 8.0
-      }, {
-        id: "2.23.142",
-        parent: "2.23",
-        name: "Spain",
-        value: 5.0
-      }, {
-        id: "2.23.143",
-        parent: "2.23",
-        name: "Costa Rica",
-        value: 4.0
-      }, {
-        id: "3.24.144",
-        parent: "3.24",
-        name: "Germany",
-        value: 8613.0
-      }, {
-        id: "3.24.145",
-        parent: "3.24",
-        name: "Austria",
-        value: 5104.0
-      }, {
-        id: "3.24.146",
-        parent: "3.24",
-        name: "Ireland",
-        value: 3135.0
-      }, {
-        id: "3.24.147",
-        parent: "3.24",
-        name: "Paraguay",
-        value: 1384.0
-      }, {
-        id: "3.24.148",
-        parent: "3.24",
-        name: "Uruguay",
-        value: 1342.0
-      }, {
-        id: "3.24.149",
-        parent: "3.24",
-        name: "Australia",
-        value: 922.0
-      }, {
-        id: "3.25.150",
-        parent: "3.25",
-        name: "Austria",
-        value: 881.0
-      }, {
-        id: "3.25.151",
-        parent: "3.25",
-        name: "Hungary",
-        value: 863.0
-      }, {
-        id: "3.25.152",
-        parent: "3.25",
-        name: "France",
-        value: 685.0
-      }, {
-        id: "3.25.153",
-        parent: "3.25",
-        name: "New Zealand",
-        value: 611.0
-      }, {
-        id: "3.25.154",
-        parent: "3.25",
-        name: "Belgium",
-        value: 602.0
-      }, {
-        id: "3.25.155",
-        parent: "3.25",
-        name: "Argentina",
-        value: 537.0
-      }, {
-        id: "3.26.156",
-        parent: "3.26",
-        name: "New Zealand",
-        value: 2184.0
-      }, {
-        id: "3.26.157",
-        parent: "3.26",
-        name: "Australia",
-        value: 2030.0
-      }, {
-        id: "3.26.158",
-        parent: "3.26",
-        name: "Ireland",
-        value: 960.0
-      }, {
-        id: "3.26.159",
-        parent: "3.26",
-        name: "United Kingdom",
-        value: 688.0
-      }, {
-        id: "3.26.160",
-        parent: "3.26",
-        name: "France",
-        value: 451.0
-      }, {
-        id: "3.26.161",
-        parent: "3.26",
-        name: "Netherlands",
-        value: 84.0
-      }, {
-        id: "3.27.162",
-        parent: "3.27",
-        name: "Italy",
-        value: 5127.0
-      }, {
-        id: "3.27.163",
-        parent: "3.27",
-        name: "Germany",
-        value: 2634.0
-      }, {
-        id: "3.27.164",
-        parent: "3.27",
-        name: "Austria",
-        value: 766.0
-      }, {
-        id: "3.27.165",
-        parent: "3.27",
-        name: "Spain",
-        value: 603.0
-      }, {
-        id: "3.27.166",
-        parent: "3.27",
-        name: "France",
-        value: 506.0
-      }, {
-        id: "3.27.167",
-        parent: "3.27",
-        name: "Portugal",
-        value: 443.0
-      }, {
-        id: "3.28.168",
-        parent: "3.28",
-        name: "Brazil",
-        value: 18165.0
-      }, {
-        id: "3.28.169",
-        parent: "3.28",
-        name: "Germany",
-        value: 9664.0
-      }, {
-        id: "3.28.170",
-        parent: "3.28",
-        name: "France",
-        value: 7142.0
-      }, {
-        id: "3.28.171",
-        parent: "3.28",
-        name: "Hungary",
-        value: 5598.0
-      }, {
-        id: "3.28.172",
-        parent: "3.28",
-        name: "Netherlands",
-        value: 3124.0
-      }, {
-        id: "3.28.173",
-        parent: "3.28",
-        name: "Slovenia",
-        value: 1981.0
-      }, {
-        id: "4.29.174",
-        parent: "4.29",
-        name: "France",
-        value: 41556.0
-      }, {
-        id: "4.29.175",
-        parent: "4.29",
-        name: "Germany",
-        value: 32123.0
-      }, {
-        id: "4.29.176",
-        parent: "4.29",
-        name: "Italy",
-        value: 22029.0
-      }, {
-        id: "4.29.177",
-        parent: "4.29",
-        name: "Netherlands",
-        value: 4576.0
-      }, {
-        id: "4.29.178",
-        parent: "4.29",
-        name: "Belgium",
-        value: 4043.0
-      }, {
-        id: "4.29.179",
-        parent: "4.29",
-        name: "United States of America",
-        value: 2742.0
-      }, {
-        id: "5.30.180",
-        parent: "5.30",
-        name: "Costa Rica",
-        value: 534.0
-      }, {
-        id: "5.30.181",
-        parent: "5.30",
-        name: "Thailand",
-        value: 269.0
-      }, {
-        id: "5.30.182",
-        parent: "5.30",
-        name: "Germany",
-        value: 192.0
-      }, {
-        id: "5.30.183",
-        parent: "5.30",
-        name: "Ecuador",
-        value: 52.0
-      }, {
-        id: "5.30.184",
-        parent: "5.30",
-        name: "Netherlands",
-        value: 50.0
-      }, {
-        id: "5.30.185",
-        parent: "5.30",
-        name: "Pakistan",
-        value: 24.0
-      }, {
-        id: "5.31.186",
-        parent: "5.31",
-        name: "Netherlands",
-        value: 20282.0
-      }, {
-        id: "5.31.187",
-        parent: "5.31",
-        name: "Germany",
-        value: 12852.0
-      }, {
-        id: "5.31.188",
-        parent: "5.31",
-        name: "France",
-        value: 6903.0
-      }, {
-        id: "5.31.189",
-        parent: "5.31",
-        name: "Israel",
-        value: 5026.0
-      }, {
-        id: "5.31.190",
-        parent: "5.31",
-        name: "Spain",
-        value: 4013.0
-      }, {
-        id: "5.31.191",
-        parent: "5.31",
-        name: "Austria",
-        value: 3449.0
-      }, {
-        id: "5.32.192",
-        parent: "5.32",
-        name: "Italy",
-        value: 49.0
-      }, {
-        id: "5.32.193",
-        parent: "5.32",
-        name: "Ghana",
-        value: 36.0
-      }, {
-        id: "5.32.194",
-        parent: "5.32",
-        name: "France",
-        value: 31.0
-      }, {
-        id: "5.32.195",
-        parent: "5.32",
-        name: "Germany",
-        value: 25.0
-      }, {
-        id: "5.32.196",
-        parent: "5.32",
-        name: "China, mainland",
-        value: 24.0
-      }, {
-        id: "5.32.197",
-        parent: "5.32",
-        name: "Togo",
-        value: 21.0
-      }, {
-        id: "5.33.198",
-        parent: "5.33",
-        name: "United States of America",
-        value: 1813.0
-      }, {
-        id: "5.33.199",
-        parent: "5.33",
-        name: "Spain",
-        value: 841.0
-      }, {
-        id: "5.33.200",
-        parent: "5.33",
-        name: "Honduras",
-        value: 341.0
-      }, {
-        id: "5.33.201",
-        parent: "5.33",
-        name: "Egypt",
-        value: 257.0
-      }, {
-        id: "5.33.202",
-        parent: "5.33",
-        name: "Senegal",
-        value: 71.0
-      }, {
-        id: "5.33.203",
-        parent: "5.33",
-        name: "Uganda",
-        value: 32.0
-      }, {
-        id: "6.34.204",
-        parent: "6.34",
-        name: "Mexico",
-        value: 2211.0
-      }, {
-        id: "6.34.205",
-        parent: "6.34",
-        name: "Germany",
-        value: 1857.0
-      }, {
-        id: "6.34.206",
-        parent: "6.34",
-        name: "Argentina",
-        value: 1387.0
-      }, {
-        id: "6.34.207",
-        parent: "6.34",
-        name: "Austria",
-        value: 557.0
-      }, {
-        id: "6.34.208",
-        parent: "6.34",
-        name: "Cuba",
-        value: 484.0
-      }, {
-        id: "6.34.209",
-        parent: "6.34",
-        name: "France",
-        value: 295.0
-      }, {
-        id: "6.35.210",
-        parent: "6.35",
-        name: "Czechia",
-        value: 25844.0
-      }, {
-        id: "6.35.211",
-        parent: "6.35",
-        name: "Germany",
-        value: 24961.0
-      }, {
-        id: "6.35.212",
-        parent: "6.35",
-        name: "France",
-        value: 21054.0
-      }, {
-        id: "6.35.213",
-        parent: "6.35",
-        name: "Austria",
-        value: 17845.0
-      }, {
-        id: "6.35.214",
-        parent: "6.35",
-        name: "Paraguay",
-        value: 3929.0
-      }, {
-        id: "6.35.215",
-        parent: "6.35",
-        name: "Costa Rica",
-        value: 3454.0
-      }, {
-        id: "6.36.216",
-        parent: "6.36",
-        name: "Italy",
-        value: 90817.0
-      }, {
-        id: "6.36.217",
-        parent: "6.36",
-        name: "Germany",
-        value: 77506.0
-      }, {
-        id: "6.36.218",
-        parent: "6.36",
-        name: "France",
-        value: 63006.0
-      }, {
-        id: "6.36.219",
-        parent: "6.36",
-        name: "Austria",
-        value: 52558.0
-      }, {
-        id: "6.36.220",
-        parent: "6.36",
-        name: "Netherlands",
-        value: 16798.0
-      }, {
-        id: "6.36.221",
-        parent: "6.36",
-        name: "Czechia",
-        value: 15981.0
-      }, {
-        id: "7.37.222",
-        parent: "7.37",
-        name: "France",
-        value: 1462.0
-      }, {
-        id: "7.37.223",
-        parent: "7.37",
-        name: "Italy",
-        value: 1074.0
-      }, {
-        id: "7.37.224",
-        parent: "7.37",
-        name: "Netherlands",
-        value: 788.0
-      }, {
-        id: "7.37.225",
-        parent: "7.37",
-        name: "Spain",
-        value: 280.0
-      }, {
-        id: "7.37.226",
-        parent: "7.37",
-        name: "New Zealand",
-        value: 196.0
-      }, {
-        id: "7.37.227",
-        parent: "7.37",
-        name: "Egypt",
-        value: 63.0
-      }, {
-        id: "7.38.228",
-        parent: "7.38",
-        name: "Italy",
-        value: 46099.0
-      }, {
-        id: "7.38.229",
-        parent: "7.38",
-        name: "Spain",
-        value: 18061.0
-      }, {
-        id: "7.38.230",
-        parent: "7.38",
-        name: "Morocco",
-        value: 6033.0
-      }, {
-        id: "7.38.231",
-        parent: "7.38",
-        name: "Netherlands",
-        value: 4010.0
-      }, {
-        id: "7.38.232",
-        parent: "7.38",
-        name: "Portugal",
-        value: 2128.0
-      }, {
-        id: "7.38.233",
-        parent: "7.38",
-        name: "France",
-        value: 1977.0
-      }, {
-        id: "7.39.234",
-        parent: "7.39",
-        name: "Spain",
-        value: 91673.0
-      }, {
-        id: "7.39.235",
-        parent: "7.39",
-        name: "Italy",
-        value: 43006.0
-      }, {
-        id: "7.39.236",
-        parent: "7.39",
-        name: "Netherlands",
-        value: 18212.0
-      }, {
-        id: "7.39.237",
-        parent: "7.39",
-        name: "Germany",
-        value: 14257.0
-      }, {
-        id: "7.39.238",
-        parent: "7.39",
-        name: "France",
-        value: 11864.0
-      }, {
-        id: "7.39.239",
-        parent: "7.39",
-        name: "Turkey",
-        value: 8898.0
-      }],
-      allowDrillToNode: true,
-      cursor: 'pointer',
-
-      levels: [{
-          level: 1,
-          colorByPoint: true,
-          levelSize: {
-            unit: 'percentage',
-            value: 50
-          }
-
-        },
-        {
-          level: 2,
-          levelSize: {
-            unit: 'percentage',
-            value: 35
-          }
-
-
-        }, {
-          level: 3,
-          levelSize: {
-            unit: 'percentage',
-            value: 15
-          }
-
-        }
-      ]
-
+  series: [{
+    type: "sunburst",
+    data: [
+    {
+      id: "0",
+      parent: "999",
+      name: "Alcohol",
+      value: 293899.0
+    }, {
+      id: "1",
+      parent: "999",
+      name: "Cereals",
+      value: 1141459.0
+    }, {
+      id: "2",
+      parent: "999",
+      name: "Fruits",
+      value: 537624.0
+    }, {
+      id: "3",
+      parent: "999",
+      name: "Meat",
+      value: 86829.0
+    }, {
+      id: "4",
+      parent: "999",
+      name: "Milk",
+      value: 107069.0
+    }, {
+      id: "5",
+      parent: "999",
+      name: "Starchy Roots",
+      value: 57187.0
+    }, {
+      id: "6",
+      parent: "999",
+      name: "Sugar",
+      value: 420544.0
+    }, {
+      id: "7",
+      parent: "999",
+      name: "Vegetables",
+      value: 270081.0
+    }, {
+      id: "0.0",
+      parent: "0",
+      name: "Beer",
+      value: 99820.0
+    }, {
+      id: "0.1",
+      parent: "0",
+      name: "Beverages, Alcoholic",
+      value: 17233.0
+    }, {
+      id: "0.2",
+      parent: "0",
+      name: "Beverages, Fermented",
+      value: 6817.0
+    }, {
+      id: "0.3",
+      parent: "0",
+      name: "Wine",
+      value: 170029.0
+    }, {
+      id: "1.4",
+      parent: "1",
+      name: "Barley",
+      value: 143872.0
+    }, {
+      id: "1.5",
+      parent: "1",
+      name: "Other",
+      value: 9211.0
+    }, {
+      id: "1.6",
+      parent: "1",
+      name: "Maize",
+      value: 191865.0
+    }, {
+      id: "1.7",
+      parent: "1",
+      name: "Millet",
+      value: 1355.0
+    }, {
+      id: "1.8",
+      parent: "1",
+      name: "Oats",
+      value: 51053.0
+    }, {
+      id: "1.9",
+      parent: "1",
+      name: "Rice (Milled Equivalent)",
+      value: 106619.0
+    }, {
+      id: "1.10",
+      parent: "1",
+      name: "Rye",
+      value: 2776.0
+    }, {
+      id: "1.11",
+      parent: "1",
+      name: "Sorghum",
+      value: 164.0
+    }, {
+      id: "1.12",
+      parent: "1",
+      name: "Wheat",
+      value: 634544.0
+    }, {
+      id: "2.13",
+      parent: "2",
+      name: "Apples",
+      value: 13685.0
+    }, {
+      id: "2.14",
+      parent: "2",
+      name: "Bananas",
+      value: 88434.0
+    }, {
+      id: "2.15",
+      parent: "2",
+      name: "Citrus, Other",
+      value: 4257.0
+    }, {
+      id: "2.16",
+      parent: "2",
+      name: "Dates",
+      value: 2545.0
+    }, {
+      id: "2.17",
+      parent: "2",
+      name: "Other",
+      value: 190799.0
+    }, {
+      id: "2.18",
+      parent: "2",
+      name: "Grapefruit",
+      value: 7775.0
+    }, {
+      id: "2.19",
+      parent: "2",
+      name: "Grapes",
+      value: 42146.0
+    }, {
+      id: "2.20",
+      parent: "2",
+      name: "Lemons, Limes",
+      value: 24848.0
+    }, {
+      id: "2.21",
+      parent: "2",
+      name: "Oranges, Mandarines",
+      value: 135173.0
+    }, {
+      id: "2.22",
+      parent: "2",
+      name: "Pineapples",
+      value: 26531.0
+    }, {
+      id: "2.23",
+      parent: "2",
+      name: "Plantains",
+      value: 1431.0
+    }, {
+      id: "3.24",
+      parent: "3",
+      name: "Bovine Meat",
+      value: 20500.0
+    }, {
+      id: "3.25",
+      parent: "3",
+      name: "Meat, Other",
+      value: 4179.0
+    }, {
+      id: "3.26",
+      parent: "3",
+      name: "Mutton & Goat Meat",
+      value: 6397.0
+    }, {
+      id: "3.27",
+      parent: "3",
+      name: "Pigmeat",
+      value: 10079.0
+    }, {
+      id: "3.28",
+      parent: "3",
+      name: "Poultry Meat",
+      value: 45674.0
+    }, {
+      id: "4.29",
+      parent: "4",
+      name: "Milk - Excluding Butter",
+      value: 107069.0
+    }, {
+      id: "5.30",
+      parent: "5",
+      name: "Cassava",
+      value: 1121.0
+    }, {
+      id: "5.31",
+      parent: "5",
+      name: "Potatoes",
+      value: 52525.0
+    }, {
+      id: "5.32",
+      parent: "5",
+      name: "Roots, Other",
+      value: 186.0
+    }, {
+      id: "5.33",
+      parent: "5",
+      name: "Sweet potatoes",
+      value: 3355.0
+    }, {
+      id: "6.34",
+      parent: "6",
+      name: "Honey",
+      value: 6791.0
+    }, {
+      id: "6.35",
+      parent: "6",
+      name: "Sugar (Raw Equivalent)",
+      value: 97087.0
+    }, {
+      id: "6.36",
+      parent: "6",
+      name: "Sweeteners, Other",
+      value: 316666.0
+    }, {
+      id: "7.37",
+      parent: "7",
+      name: "Onions",
+      value: 3863.0
+    }, {
+      id: "7.38",
+      parent: "7",
+      name: "Tomatoes",
+      value: 78308.0
+    }, {
+      id: "7.39",
+      parent: "7",
+      name: "Vegetables, Other",
+      value: 187910.0
+    }, {
+      id: "0.0.0",
+      parent: "0.0",
+      name: "Germany",
+      value: 49586.0
+    }, {
+      id: "0.0.1",
+      parent: "0.0",
+      name: "Portugal",
+      value: 20359.0
+    }, {
+      id: "0.0.2",
+      parent: "0.0",
+      name: "Netherlands",
+      value: 11319.0
+    }, {
+      id: "0.0.3",
+      parent: "0.0",
+      name: "France",
+      value: 9872.0
+    }, {
+      id: "0.0.4",
+      parent: "0.0",
+      name: "Mexico",
+      value: 5413.0
+    }, {
+      id: "0.0.5",
+      parent: "0.0",
+      name: "Italy",
+      value: 3271.0
+    }, {
+      id: "0.1.6",
+      parent: "0.1",
+      name: "Italy",
+      value: 5781.0
+    }, {
+      id: "0.1.7",
+      parent: "0.1",
+      name: "United Kingdom",
+      value: 4014.0
+    }, {
+      id: "0.1.8",
+      parent: "0.1",
+      name: "Germany",
+      value: 3550.0
+    }, {
+      id: "0.1.9",
+      parent: "0.1",
+      name: "France",
+      value: 2052.0
+    }, {
+      id: "0.1.10",
+      parent: "0.1",
+      name: "United States of America",
+      value: 1173.0
+    }, {
+      id: "0.1.11",
+      parent: "0.1",
+      name: "Ireland",
+      value: 663.0
+    }, {
+      id: "0.2.12",
+      parent: "0.2",
+      name: "Germany",
+      value: 4150.0
+    }, {
+      id: "0.2.13",
+      parent: "0.2",
+      name: "Belgium",
+      value: 708.0
+    }, {
+      id: "0.2.14",
+      parent: "0.2",
+      name: "France",
+      value: 696.0
+    }, {
+      id: "0.2.15",
+      parent: "0.2",
+      name: "Italy",
+      value: 619.0
+    }, {
+      id: "0.2.16",
+      parent: "0.2",
+      name: "Ireland",
+      value: 354.0
+    }, {
+      id: "0.2.17",
+      parent: "0.2",
+      name: "Austria",
+      value: 290.0
+    }, {
+      id: "0.3.18",
+      parent: "0.3",
+      name: "Italy",
+      value: 76649.0
+    }, {
+      id: "0.3.19",
+      parent: "0.3",
+      name: "France",
+      value: 39632.0
+    }, {
+      id: "0.3.20",
+      parent: "0.3",
+      name: "Spain",
+      value: 31445.0
+    }, {
+      id: "0.3.21",
+      parent: "0.3",
+      name: "Portugal",
+      value: 10638.0
+    }, {
+      id: "0.3.22",
+      parent: "0.3",
+      name: "Germany",
+      value: 7152.0
+    }, {
+      id: "0.3.23",
+      parent: "0.3",
+      name: "South Africa",
+      value: 4513.0
+    }, {
+      id: "1.4.24",
+      parent: "1.4",
+      name: "Germany",
+      value: 65947.0
+    }, {
+      id: "1.4.25",
+      parent: "1.4",
+      name: "France",
+      value: 46399.0
+    }, {
+      id: "1.4.26",
+      parent: "1.4",
+      name: "Hungary",
+      value: 15937.0
+    }, {
+      id: "1.4.27",
+      parent: "1.4",
+      name: "Czechia",
+      value: 9819.0
+    }, {
+      id: "1.4.28",
+      parent: "1.4",
+      name: "Slovakia",
+      value: 3346.0
+    }, {
+      id: "1.4.29",
+      parent: "1.4",
+      name: "Austria",
+      value: 2424.0
+    }, {
+      id: "1.5.30",
+      parent: "1.5",
+      name: "Italy",
+      value: 6100.0
+    }, {
+      id: "1.5.31",
+      parent: "1.5",
+      name: "Germany",
+      value: 1342.0
+    }, {
+      id: "1.5.32",
+      parent: "1.5",
+      name: "Bolivia (Plurinational State of)",
+      value: 708.0
+    }, {
+      id: "1.5.33",
+      parent: "1.5",
+      name: "France",
+      value: 440.0
+    }, {
+      id: "1.5.34",
+      parent: "1.5",
+      name: "Austria",
+      value: 343.0
+    }, {
+      id: "1.5.35",
+      parent: "1.5",
+      name: "China, mainland",
+      value: 278.0
+    }, {
+      id: "1.6.36",
+      parent: "1.6",
+      name: "France",
+      value: 73435.0
+    }, {
+      id: "1.6.37",
+      parent: "1.6",
+      name: "Germany",
+      value: 46320.0
+    }, {
+      id: "1.6.38",
+      parent: "1.6",
+      name: "China, mainland",
+      value: 32735.0
+    }, {
+      id: "1.6.39",
+      parent: "1.6",
+      name: "Romania",
+      value: 17881.0
+    }, {
+      id: "1.6.40",
+      parent: "1.6",
+      name: "Hungary",
+      value: 11491.0
+    }, {
+      id: "1.6.41",
+      parent: "1.6",
+      name: "Slovakia",
+      value: 10003.0
+    }, {
+      id: "1.7.42",
+      parent: "1.7",
+      name: "Austria",
+      value: 564.0
+    }, {
+      id: "1.7.43",
+      parent: "1.7",
+      name: "Hungary",
+      value: 294.0
+    }, {
+      id: "1.7.44",
+      parent: "1.7",
+      name: "Germany",
+      value: 261.0
+    }, {
+      id: "1.7.45",
+      parent: "1.7",
+      name: "France",
+      value: 105.0
+    }, {
+      id: "1.7.46",
+      parent: "1.7",
+      name: "Ukraine",
+      value: 89.0
+    }, {
+      id: "1.7.47",
+      parent: "1.7",
+      name: "Netherlands",
+      value: 42.0
+    }, {
+      id: "1.8.48",
+      parent: "1.8",
+      name: "Finland",
+      value: 20863.0
+    }, {
+      id: "1.8.49",
+      parent: "1.8",
+      name: "Germany",
+      value: 15170.0
+    }, {
+      id: "1.8.50",
+      parent: "1.8",
+      name: "France",
+      value: 6809.0
+    }, {
+      id: "1.8.51",
+      parent: "1.8",
+      name: "Czechia",
+      value: 4233.0
+    }, {
+      id: "1.8.52",
+      parent: "1.8",
+      name: "Sweden",
+      value: 2639.0
+    }, {
+      id: "1.8.53",
+      parent: "1.8",
+      name: "Austria",
+      value: 1339.0
+    }, {
+      id: "1.9.54",
+      parent: "1.9",
+      name: "Brazil",
+      value: 48721.0
+    }, {
+      id: "1.9.55",
+      parent: "1.9",
+      name: "Italy",
+      value: 24678.0
+    }, {
+      id: "1.9.56",
+      parent: "1.9",
+      name: "Thailand",
+      value: 14446.0
+    }, {
+      id: "1.9.57",
+      parent: "1.9",
+      name: "India",
+      value: 7781.0
+    }, {
+      id: "1.9.58",
+      parent: "1.9",
+      name: "Russian Federation",
+      value: 6842.0
+    }, {
+      id: "1.9.59",
+      parent: "1.9",
+      name: "Uruguay",
+      value: 4151.0
+    }, {
+      id: "1.10.60",
+      parent: "1.10",
+      name: "Austria",
+      value: 1203.0
+    }, {
+      id: "1.10.61",
+      parent: "1.10",
+      name: "Germany",
+      value: 947.0
+    }, {
+      id: "1.10.62",
+      parent: "1.10",
+      name: "Ukraine",
+      value: 330.0
+    }, {
+      id: "1.10.63",
+      parent: "1.10",
+      name: "Serbia",
+      value: 182.0
+    }, {
+      id: "1.10.64",
+      parent: "1.10",
+      name: "United Kingdom",
+      value: 62.0
+    }, {
+      id: "1.10.65",
+      parent: "1.10",
+      name: "Lithuania",
+      value: 52.0
+    }, {
+      id: "1.11.66",
+      parent: "1.11",
+      name: "Italy",
+      value: 102.0
+    }, {
+      id: "1.11.67",
+      parent: "1.11",
+      name: "France",
+      value: 50.0
+    }, {
+      id: "1.11.68",
+      parent: "1.11",
+      name: "Russian Federation",
+      value: 9.0
+    }, {
+      id: "1.11.69",
+      parent: "1.11",
+      name: "Argentina",
+      value: 1.0
+    }, {
+      id: "1.11.70",
+      parent: "1.11",
+      name: "Austria",
+      value: 1.0
+    }, {
+      id: "1.11.71",
+      parent: "1.11",
+      name: "Germany",
+      value: 1.0
+    }, {
+      id: "1.12.72",
+      parent: "1.12",
+      name: "Germany",
+      value: 240304.0
+    }, {
+      id: "1.12.73",
+      parent: "1.12",
+      name: "France",
+      value: 141816.0
+    }, {
+      id: "1.12.74",
+      parent: "1.12",
+      name: "Austria",
+      value: 80452.0
+    }, {
+      id: "1.12.75",
+      parent: "1.12",
+      name: "Canada",
+      value: 60689.0
+    }, {
+      id: "1.12.76",
+      parent: "1.12",
+      name: "Italy",
+      value: 60283.0
+    }, {
+      id: "1.12.77",
+      parent: "1.12",
+      name: "Hungary",
+      value: 51000.0
+    }, {
+      id: "2.13.78",
+      parent: "2.13",
+      name: "Italy",
+      value: 7178.0
+    }, {
+      id: "2.13.79",
+      parent: "2.13",
+      name: "Germany",
+      value: 2506.0
+    }, {
+      id: "2.13.80",
+      parent: "2.13",
+      name: "New Zealand",
+      value: 1630.0
+    }, {
+      id: "2.13.81",
+      parent: "2.13",
+      name: "France",
+      value: 1078.0
+    }, {
+      id: "2.13.82",
+      parent: "2.13",
+      name: "Chile",
+      value: 819.0
+    }, {
+      id: "2.13.83",
+      parent: "2.13",
+      name: "Belgium",
+      value: 474.0
+    }, {
+      id: "2.14.84",
+      parent: "2.14",
+      name: "Colombia",
+      value: 38634.0
+    }, {
+      id: "2.14.85",
+      parent: "2.14",
+      name: "Panama",
+      value: 18585.0
+    }, {
+      id: "2.14.86",
+      parent: "2.14",
+      name: "Ecuador",
+      value: 11576.0
+    }, {
+      id: "2.14.87",
+      parent: "2.14",
+      name: "Peru",
+      value: 9287.0
+    }, {
+      id: "2.14.88",
+      parent: "2.14",
+      name: "Costa Rica",
+      value: 5584.0
+    }, {
+      id: "2.14.89",
+      parent: "2.14",
+      name: "Dominican Republic",
+      value: 4768.0
+    }, {
+      id: "2.15.90",
+      parent: "2.15",
+      name: "Italy",
+      value: 3212.0
+    }, {
+      id: "2.15.91",
+      parent: "2.15",
+      name: "Argentina",
+      value: 399.0
+    }, {
+      id: "2.15.92",
+      parent: "2.15",
+      name: "France",
+      value: 268.0
+    }, {
+      id: "2.15.93",
+      parent: "2.15",
+      name: "Peru",
+      value: 159.0
+    }, {
+      id: "2.15.94",
+      parent: "2.15",
+      name: "Brazil",
+      value: 117.0
+    }, {
+      id: "2.15.95",
+      parent: "2.15",
+      name: "Uruguay",
+      value: 102.0
+    }, {
+      id: "2.16.96",
+      parent: "2.16",
+      name: "Tunisia",
+      value: 1280.0
+    }, {
+      id: "2.16.97",
+      parent: "2.16",
+      name: "Israel",
+      value: 646.0
+    }, {
+      id: "2.16.98",
+      parent: "2.16",
+      name: "United States of America",
+      value: 373.0
+    }, {
+      id: "2.16.99",
+      parent: "2.16",
+      name: "Netherlands",
+      value: 108.0
+    }, {
+      id: "2.16.100",
+      parent: "2.16",
+      name: "Iran (Islamic Republic of)",
+      value: 78.0
+    }, {
+      id: "2.16.101",
+      parent: "2.16",
+      name: "Algeria",
+      value: 60.0
+    }, {
+      id: "2.17.102",
+      parent: "2.17",
+      name: "Spain",
+      value: 86480.0
+    }, {
+      id: "2.17.103",
+      parent: "2.17",
+      name: "Italy",
+      value: 50415.0
+    }, {
+      id: "2.17.104",
+      parent: "2.17",
+      name: "France",
+      value: 23463.0
+    }, {
+      id: "2.17.105",
+      parent: "2.17",
+      name: "Germany",
+      value: 11859.0
+    }, {
+      id: "2.17.106",
+      parent: "2.17",
+      name: "Peru",
+      value: 9752.0
+    }, {
+      id: "2.17.107",
+      parent: "2.17",
+      name: "South Africa",
+      value: 8830.0
+    }, {
+      id: "2.18.108",
+      parent: "2.18",
+      name: "South Africa",
+      value: 1786.0
+    }, {
+      id: "2.18.109",
+      parent: "2.18",
+      name: "United States of America",
+      value: 1726.0
+    }, {
+      id: "2.18.110",
+      parent: "2.18",
+      name: "Spain",
+      value: 1546.0
+    }, {
+      id: "2.18.111",
+      parent: "2.18",
+      name: "Israel",
+      value: 1400.0
+    }, {
+      id: "2.18.112",
+      parent: "2.18",
+      name: "France",
+      value: 688.0
+    }, {
+      id: "2.18.113",
+      parent: "2.18",
+      name: "China, mainland",
+      value: 629.0
+    }, {
+      id: "2.19.114",
+      parent: "2.19",
+      name: "Italy",
+      value: 30709.0
+    }, {
+      id: "2.19.115",
+      parent: "2.19",
+      name: "France",
+      value: 3258.0
+    }, {
+      id: "2.19.116",
+      parent: "2.19",
+      name: "South Africa",
+      value: 2945.0
+    }, {
+      id: "2.19.117",
+      parent: "2.19",
+      name: "Turkey",
+      value: 2767.0
+    }, {
+      id: "2.19.118",
+      parent: "2.19",
+      name: "India",
+      value: 1664.0
+    }, {
+      id: "2.19.119",
+      parent: "2.19",
+      name: "Spain",
+      value: 803.0
+    }, {
+      id: "2.20.120",
+      parent: "2.20",
+      name: "Spain",
+      value: 16484.0
+    }, {
+      id: "2.20.121",
+      parent: "2.20",
+      name: "Brazil",
+      value: 2568.0
+    }, {
+      id: "2.20.122",
+      parent: "2.20",
+      name: "Italy",
+      value: 2523.0
+    }, {
+      id: "2.20.123",
+      parent: "2.20",
+      name: "South Africa",
+      value: 1867.0
+    }, {
+      id: "2.20.124",
+      parent: "2.20",
+      name: "Mexico",
+      value: 729.0
+    }, {
+      id: "2.20.125",
+      parent: "2.20",
+      name: "Argentina",
+      value: 677.0
+    }, {
+      id: "2.21.126",
+      parent: "2.21",
+      name: "Spain",
+      value: 80401.0
+    }, {
+      id: "2.21.127",
+      parent: "2.21",
+      name: "Italy",
+      value: 20565.0
+    }, {
+      id: "2.21.128",
+      parent: "2.21",
+      name: "Brazil",
+      value: 19026.0
+    }, {
+      id: "2.21.129",
+      parent: "2.21",
+      name: "South Africa",
+      value: 7083.0
+    }, {
+      id: "2.21.130",
+      parent: "2.21",
+      name: "France",
+      value: 5242.0
+    }, {
+      id: "2.21.131",
+      parent: "2.21",
+      name: "Israel",
+      value: 2856.0
+    }, {
+      id: "2.22.132",
+      parent: "2.22",
+      name: "Costa Rica",
+      value: 16590.0
+    }, {
+      id: "2.22.133",
+      parent: "2.22",
+      name: "Thailand",
+      value: 4386.0
+    }, {
+      id: "2.22.134",
+      parent: "2.22",
+      name: "Ghana",
+      value: 2215.0
+    }, {
+      id: "2.22.135",
+      parent: "2.22",
+      name: "Indonesia",
+      value: 1760.0
+    }, {
+      id: "2.22.136",
+      parent: "2.22",
+      name: "Ecuador",
+      value: 880.0
+    }, {
+      id: "2.22.137",
+      parent: "2.22",
+      name: "Panama",
+      value: 700.0
+    }, {
+      id: "2.23.138",
+      parent: "2.23",
+      name: "Ecuador",
+      value: 1202.0
+    }, {
+      id: "2.23.139",
+      parent: "2.23",
+      name: "Colombia",
+      value: 165.0
+    }, {
+      id: "2.23.140",
+      parent: "2.23",
+      name: "Uganda",
+      value: 47.0
+    }, {
+      id: "2.23.141",
+      parent: "2.23",
+      name: "Sri Lanka",
+      value: 8.0
+    }, {
+      id: "2.23.142",
+      parent: "2.23",
+      name: "Spain",
+      value: 5.0
+    }, {
+      id: "2.23.143",
+      parent: "2.23",
+      name: "Costa Rica",
+      value: 4.0
+    }, {
+      id: "3.24.144",
+      parent: "3.24",
+      name: "Germany",
+      value: 8613.0
+    }, {
+      id: "3.24.145",
+      parent: "3.24",
+      name: "Austria",
+      value: 5104.0
+    }, {
+      id: "3.24.146",
+      parent: "3.24",
+      name: "Ireland",
+      value: 3135.0
+    }, {
+      id: "3.24.147",
+      parent: "3.24",
+      name: "Paraguay",
+      value: 1384.0
+    }, {
+      id: "3.24.148",
+      parent: "3.24",
+      name: "Uruguay",
+      value: 1342.0
+    }, {
+      id: "3.24.149",
+      parent: "3.24",
+      name: "Australia",
+      value: 922.0
+    }, {
+      id: "3.25.150",
+      parent: "3.25",
+      name: "Austria",
+      value: 881.0
+    }, {
+      id: "3.25.151",
+      parent: "3.25",
+      name: "Hungary",
+      value: 863.0
+    }, {
+      id: "3.25.152",
+      parent: "3.25",
+      name: "France",
+      value: 685.0
+    }, {
+      id: "3.25.153",
+      parent: "3.25",
+      name: "New Zealand",
+      value: 611.0
+    }, {
+      id: "3.25.154",
+      parent: "3.25",
+      name: "Belgium",
+      value: 602.0
+    }, {
+      id: "3.25.155",
+      parent: "3.25",
+      name: "Argentina",
+      value: 537.0
+    }, {
+      id: "3.26.156",
+      parent: "3.26",
+      name: "New Zealand",
+      value: 2184.0
+    }, {
+      id: "3.26.157",
+      parent: "3.26",
+      name: "Australia",
+      value: 2030.0
+    }, {
+      id: "3.26.158",
+      parent: "3.26",
+      name: "Ireland",
+      value: 960.0
+    }, {
+      id: "3.26.159",
+      parent: "3.26",
+      name: "United Kingdom",
+      value: 688.0
+    }, {
+      id: "3.26.160",
+      parent: "3.26",
+      name: "France",
+      value: 451.0
+    }, {
+      id: "3.26.161",
+      parent: "3.26",
+      name: "Netherlands",
+      value: 84.0
+    }, {
+      id: "3.27.162",
+      parent: "3.27",
+      name: "Italy",
+      value: 5127.0
+    }, {
+      id: "3.27.163",
+      parent: "3.27",
+      name: "Germany",
+      value: 2634.0
+    }, {
+      id: "3.27.164",
+      parent: "3.27",
+      name: "Austria",
+      value: 766.0
+    }, {
+      id: "3.27.165",
+      parent: "3.27",
+      name: "Spain",
+      value: 603.0
+    }, {
+      id: "3.27.166",
+      parent: "3.27",
+      name: "France",
+      value: 506.0
+    }, {
+      id: "3.27.167",
+      parent: "3.27",
+      name: "Portugal",
+      value: 443.0
+    }, {
+      id: "3.28.168",
+      parent: "3.28",
+      name: "Brazil",
+      value: 18165.0
+    }, {
+      id: "3.28.169",
+      parent: "3.28",
+      name: "Germany",
+      value: 9664.0
+    }, {
+      id: "3.28.170",
+      parent: "3.28",
+      name: "France",
+      value: 7142.0
+    }, {
+      id: "3.28.171",
+      parent: "3.28",
+      name: "Hungary",
+      value: 5598.0
+    }, {
+      id: "3.28.172",
+      parent: "3.28",
+      name: "Netherlands",
+      value: 3124.0
+    }, {
+      id: "3.28.173",
+      parent: "3.28",
+      name: "Slovenia",
+      value: 1981.0
+    }, {
+      id: "4.29.174",
+      parent: "4.29",
+      name: "France",
+      value: 41556.0
+    }, {
+      id: "4.29.175",
+      parent: "4.29",
+      name: "Germany",
+      value: 32123.0
+    }, {
+      id: "4.29.176",
+      parent: "4.29",
+      name: "Italy",
+      value: 22029.0
+    }, {
+      id: "4.29.177",
+      parent: "4.29",
+      name: "Netherlands",
+      value: 4576.0
+    }, {
+      id: "4.29.178",
+      parent: "4.29",
+      name: "Belgium",
+      value: 4043.0
+    }, {
+      id: "4.29.179",
+      parent: "4.29",
+      name: "United States of America",
+      value: 2742.0
+    }, {
+      id: "5.30.180",
+      parent: "5.30",
+      name: "Costa Rica",
+      value: 534.0
+    }, {
+      id: "5.30.181",
+      parent: "5.30",
+      name: "Thailand",
+      value: 269.0
+    }, {
+      id: "5.30.182",
+      parent: "5.30",
+      name: "Germany",
+      value: 192.0
+    }, {
+      id: "5.30.183",
+      parent: "5.30",
+      name: "Ecuador",
+      value: 52.0
+    }, {
+      id: "5.30.184",
+      parent: "5.30",
+      name: "Netherlands",
+      value: 50.0
+    }, {
+      id: "5.30.185",
+      parent: "5.30",
+      name: "Pakistan",
+      value: 24.0
+    }, {
+      id: "5.31.186",
+      parent: "5.31",
+      name: "Netherlands",
+      value: 20282.0
+    }, {
+      id: "5.31.187",
+      parent: "5.31",
+      name: "Germany",
+      value: 12852.0
+    }, {
+      id: "5.31.188",
+      parent: "5.31",
+      name: "France",
+      value: 6903.0
+    }, {
+      id: "5.31.189",
+      parent: "5.31",
+      name: "Israel",
+      value: 5026.0
+    }, {
+      id: "5.31.190",
+      parent: "5.31",
+      name: "Spain",
+      value: 4013.0
+    }, {
+      id: "5.31.191",
+      parent: "5.31",
+      name: "Austria",
+      value: 3449.0
+    }, {
+      id: "5.32.192",
+      parent: "5.32",
+      name: "Italy",
+      value: 49.0
+    }, {
+      id: "5.32.193",
+      parent: "5.32",
+      name: "Ghana",
+      value: 36.0
+    }, {
+      id: "5.32.194",
+      parent: "5.32",
+      name: "France",
+      value: 31.0
+    }, {
+      id: "5.32.195",
+      parent: "5.32",
+      name: "Germany",
+      value: 25.0
+    }, {
+      id: "5.32.196",
+      parent: "5.32",
+      name: "China, mainland",
+      value: 24.0
+    }, {
+      id: "5.32.197",
+      parent: "5.32",
+      name: "Togo",
+      value: 21.0
+    }, {
+      id: "5.33.198",
+      parent: "5.33",
+      name: "United States of America",
+      value: 1813.0
+    }, {
+      id: "5.33.199",
+      parent: "5.33",
+      name: "Spain",
+      value: 841.0
+    }, {
+      id: "5.33.200",
+      parent: "5.33",
+      name: "Honduras",
+      value: 341.0
+    }, {
+      id: "5.33.201",
+      parent: "5.33",
+      name: "Egypt",
+      value: 257.0
+    }, {
+      id: "5.33.202",
+      parent: "5.33",
+      name: "Senegal",
+      value: 71.0
+    }, {
+      id: "5.33.203",
+      parent: "5.33",
+      name: "Uganda",
+      value: 32.0
+    }, {
+      id: "6.34.204",
+      parent: "6.34",
+      name: "Mexico",
+      value: 2211.0
+    }, {
+      id: "6.34.205",
+      parent: "6.34",
+      name: "Germany",
+      value: 1857.0
+    }, {
+      id: "6.34.206",
+      parent: "6.34",
+      name: "Argentina",
+      value: 1387.0
+    }, {
+      id: "6.34.207",
+      parent: "6.34",
+      name: "Austria",
+      value: 557.0
+    }, {
+      id: "6.34.208",
+      parent: "6.34",
+      name: "Cuba",
+      value: 484.0
+    }, {
+      id: "6.34.209",
+      parent: "6.34",
+      name: "France",
+      value: 295.0
+    }, {
+      id: "6.35.210",
+      parent: "6.35",
+      name: "Czechia",
+      value: 25844.0
+    }, {
+      id: "6.35.211",
+      parent: "6.35",
+      name: "Germany",
+      value: 24961.0
+    }, {
+      id: "6.35.212",
+      parent: "6.35",
+      name: "France",
+      value: 21054.0
+    }, {
+      id: "6.35.213",
+      parent: "6.35",
+      name: "Austria",
+      value: 17845.0
+    }, {
+      id: "6.35.214",
+      parent: "6.35",
+      name: "Paraguay",
+      value: 3929.0
+    }, {
+      id: "6.35.215",
+      parent: "6.35",
+      name: "Costa Rica",
+      value: 3454.0
+    }, {
+      id: "6.36.216",
+      parent: "6.36",
+      name: "Italy",
+      value: 90817.0
+    }, {
+      id: "6.36.217",
+      parent: "6.36",
+      name: "Germany",
+      value: 77506.0
+    }, {
+      id: "6.36.218",
+      parent: "6.36",
+      name: "France",
+      value: 63006.0
+    }, {
+      id: "6.36.219",
+      parent: "6.36",
+      name: "Austria",
+      value: 52558.0
+    }, {
+      id: "6.36.220",
+      parent: "6.36",
+      name: "Netherlands",
+      value: 16798.0
+    }, {
+      id: "6.36.221",
+      parent: "6.36",
+      name: "Czechia",
+      value: 15981.0
+    }, {
+      id: "7.37.222",
+      parent: "7.37",
+      name: "France",
+      value: 1462.0
+    }, {
+      id: "7.37.223",
+      parent: "7.37",
+      name: "Italy",
+      value: 1074.0
+    }, {
+      id: "7.37.224",
+      parent: "7.37",
+      name: "Netherlands",
+      value: 788.0
+    }, {
+      id: "7.37.225",
+      parent: "7.37",
+      name: "Spain",
+      value: 280.0
+    }, {
+      id: "7.37.226",
+      parent: "7.37",
+      name: "New Zealand",
+      value: 196.0
+    }, {
+      id: "7.37.227",
+      parent: "7.37",
+      name: "Egypt",
+      value: 63.0
+    }, {
+      id: "7.38.228",
+      parent: "7.38",
+      name: "Italy",
+      value: 46099.0
+    }, {
+      id: "7.38.229",
+      parent: "7.38",
+      name: "Spain",
+      value: 18061.0
+    }, {
+      id: "7.38.230",
+      parent: "7.38",
+      name: "Morocco",
+      value: 6033.0
+    }, {
+      id: "7.38.231",
+      parent: "7.38",
+      name: "Netherlands",
+      value: 4010.0
+    }, {
+      id: "7.38.232",
+      parent: "7.38",
+      name: "Portugal",
+      value: 2128.0
+    }, {
+      id: "7.38.233",
+      parent: "7.38",
+      name: "France",
+      value: 1977.0
+    }, {
+      id: "7.39.234",
+      parent: "7.39",
+      name: "Spain",
+      value: 91673.0
+    }, {
+      id: "7.39.235",
+      parent: "7.39",
+      name: "Italy",
+      value: 43006.0
+    }, {
+      id: "7.39.236",
+      parent: "7.39",
+      name: "Netherlands",
+      value: 18212.0
+    }, {
+      id: "7.39.237",
+      parent: "7.39",
+      name: "Germany",
+      value: 14257.0
+    }, {
+      id: "7.39.238",
+      parent: "7.39",
+      name: "France",
+      value: 11864.0
+    }, {
+      id: "7.39.239",
+      parent: "7.39",
+      name: "Turkey",
+      value: 8898.0
     }],
-    tooltip: {
-      headerFormat: "",
-      pointFormat: 'The amount of imports of <b>{point.name}</b> is <b>{point.value}</b> tonnes'
-    }
-  });
-</script>
+    allowDrillToNode: true,
+    cursor: 'pointer',
 
-</html>
+    levels: [{
+        level: 1,
+        colorByPoint: true,
+        levelSize: {
+          unit: 'percentage',
+          value: 50
+        }
+
+      },
+      {
+        level: 2,
+        levelSize: {
+          unit: 'percentage',
+          value: 35
+        }
+
+
+      }, {
+        level: 3,
+        levelSize: {
+          unit: 'percentage',
+          value: 15
+        }
+
+      }
+    ]
+
+  }],
+  tooltip: {
+    headerFormat: "",
+    pointFormat: 'The amount of imports of <b>{point.name}</b> is <b>{point.value}</b> tonnes'
+  }
+});
+
+var chart_stan = Highcharts.chart('price_import_pct', {
+  title: {
+    text: 'Maize price and quantity evolution in Switzerland, 1992-2017'
+  },
+
+  yAxis: {
+    title: {
+      text: 'Evolution from 1992 (%)'
+    }
+  },
+
+  xAxis: {
+    title: {
+      text: 'Year'
+    },
+    accessibility: {
+      rangeDescription: 'Range: 1992 to 2017'
+    }
+  },
+
+
+  tooltip: {
+    split: true,
+    valueDecimals: 2,
+    valueSuffix: '%'
+  },
+  plotOptions: {
+    series: {
+      marker: {
+        enabled: false
+      },
+      label: {
+        connectorAllowed: false
+      },
+      pointStart: 1992,
+      lineWidth: 3
+    },
+
+  },
+
+  series: [{
+      name: 'Producer prices',
+      color: '#31a04c',
+      data: [-6.82600382, -6.32887189, -2.50478011, -16.61567878,
+        -30.30592734, -31.41491396, -36.86424474, -45.77437859,
+        -49.5793499, -45.41108987, -34.11089866, -40.80305927,
+        -46.71128107, -42.50478011, -42.81070746, -39.80879541,
+        -44.13001912, -38.75717017, -34.32122371, -38.83365201,
+        -34.60803059, -38.43212237, -37.208413, -38.68068834,
+        -39.80879541
+      ]
+    }, {
+      name: 'Quantity of Importation',
+      color: '#cf7e63',
+      data: [-5.36474036, 5.24921811, -14.07117297, 38.57034178,
+        69.14992533, 33.90437012, -17.27198445, -29.61314136,
+        -54.25037333, 12.18900566, 243.19123158, 123.45101575,
+        114.55016765, 58.64303626, 357.22014032, 234.3298301,
+        90.08481023, 171.67169141, 274.34842636, 165.90403201,
+        193.0151306, 297.05840917, 270.48265758, 367.34946888,
+        338.52244231
+      ]
+    }, {
+      name: 'Producer prices, with inflation',
+      color: '#3169a0',
+      data: [0., -26.17827533, -34.51976488, -75.83675177,
+        -69.46982183, -80.55882731, -84.98302029, -91.36393032,
+        -85.74954105, -78.14774142, -79.49523231, -84.78527854,
+        -86.34048759, -83.78153067, -80.56515726, -80.60448495,
+        -84.85713279, -67.17164704, -94.66152651, -83.8436619,
+        -87.40219788, -97.03785858, -92.31040832, -90.53255267,
+        -101.35519039
+      ]
+    },
+    {
+      name: 'Quantity of Exportation',
+      color: '#6f94fe',
+      data: [0., -58.13953488, -81.39534884, -80.62015504,
+        -34.88372093, -46.51162791, -39.53488372, -48.0620155,
+        117.82945736, 283.72093023, 138.75968992, 58.91472868,
+        98.4496124, 33.33333333, -44.18604651, 67.44186047,
+        -24.80620155, -19.37984496, -20.93023256, -12.40310078,
+        45.73643411, 17.82945736, 34.10852713, 40.31007752,
+        44.96124031
+      ]
+    }
+  ],
+
+});
+
+
+</script>
