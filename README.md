@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+
 <html lang="en" dir="ltr">
 
-<head>
+
   <meta charset="utf-8">
   <title>Swiss Food From The World</title>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -22,7 +22,7 @@
   <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
   <script src="http://code.highcharts.com/maps/modules/map.js"></script>
   <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
-
+<head>
   <style>
     .button {
       background-color: #34495E;
