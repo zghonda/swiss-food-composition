@@ -66,10 +66,10 @@
     <div id="imp_exp_prod"></div>
   </figure>
 
-  <h2>Food Importation</h2>
-  <p>We looked into the kind of food we are used to eat and how much of it actually comes from Switzerland. However, it still remains unknown at this point where the rest of our food comes from.
-    Since we already analyzed the evolution of our importations throughout the years, it is interesting here to focus on other dimensions such as the provenance of our importations as well as their proportion.
-    For this reason we only study here the most recent data to obtain results that relate to us as much as possible.</p>
+  ## Food Importation
+  We looked into the kind of food we are used to eat and how much of it actually comes from Switzerland. However, it still remains unknown at this point where the rest of our food comes from.
+  Since we already analyzed the evolution of our importations throughout the years, it is interesting here to focus on other dimensions such as the provenance of our importations as well as their proportion.
+  For this reason we only study here the most recent data to obtain results that relate to us as much as possible.
 
   <figure class="highcharts-figure">
     <div id="import_map"></div>
