@@ -75,7 +75,7 @@
     For this reason we only study here the most recent data to obtain results that relate to us as much as possible.
   </p>
 
-  <figure class="highcharts-figure">
+  <!--<figure class="highcharts-figure">
     <div id="import_map"></div>
     <button class="button" id="overview">Overview</button>
     <button class="button" id="alcohol">Alcohol</button>
@@ -93,7 +93,7 @@
     <div id="sunburst"></div>
 
   </figure>
-
+  -->
 
 
   <figure class="highcharts-figure">
