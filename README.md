@@ -8,6 +8,8 @@
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/highcharts-more.js"></script>
   <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+  <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+  <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
   <script src="https://code.highcharts.com/modules/sunburst.js"></script>
   <script src="https://code.highcharts.com/modules/streamgraph.js"></script>
   <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
@@ -20,8 +22,8 @@
   <script src="https://code.highcharts.com/maps/modules/data.js"></script>
   <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
-  <script src="http://code.highcharts.com/maps/modules/map.js"></script>
-  <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+
+
 <head>
   <style>
     .button {
@@ -66,10 +68,12 @@
     <div id="imp_exp_prod"></div>
   </figure>
 
-  ## Food Importation
-  We looked into the kind of food we are used to eat and how much of it actually comes from Switzerland. However, it still remains unknown at this point where the rest of our food comes from.
-  Since we already analyzed the evolution of our importations throughout the years, it is interesting here to focus on other dimensions such as the provenance of our importations as well as their proportion.
-  For this reason we only study here the most recent data to obtain results that relate to us as much as possible.
+  <h2>Food Importation</h2>
+  <p>
+    We looked into the kind of food we are used to eat and how much of it actually comes from Switzerland. However, it still remains unknown at this point where the rest of our food comes from.
+    Since we already analyzed the evolution of our importations throughout the years, it is interesting here to focus on other dimensions such as the provenance of our importations as well as their proportion.
+    For this reason we only study here the most recent data to obtain results that relate to us as much as possible.
+  </p>
 
   <figure class="highcharts-figure">
     <div id="import_map"></div>
