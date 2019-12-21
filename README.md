@@ -17,6 +17,7 @@
 <script src="https://code.highcharts.com/maps/modules/map.js"></script>
 <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
+![](https://jlabhard.github.io/static/images/food.jpg)
 
 <style>
   .button {
@@ -35,8 +36,9 @@
 
 ## Introduction
 
+No one asks about the food provenance and an
 Food And Agriculture Organization of the United Nations (FAOSTAT) supplies worldwide reliable data covering many topics: from food security to investment.
-FAOSTAT is composed of around 75 different datasets enabling us to draw the data story with the help of the Eaternity database. For the food carbon emissions data, we had access Eaternity database that was offered to us by Manuel Klarmann, founder & CEO of the eponym project. We deeply thank him for this contribution to our project.
+FAOSTAT is composed of around 75 different datasets enabling us to draw the data story with the help of the Eaternity database.
 
 ## Food balance
 
@@ -47,11 +49,11 @@ FAOSTAT is composed of around 75 different datasets enabling us to draw the data
   <button class="button" id="production">Production</button>
 </figure>
 
-Surprisingly, the total amount of food consumption in Switzerland did not have any noticeable changes during the last 50 years. In the other hand, comparing it by the proportion for each group of products show that the swiss people consume a lot of milk products (around 3 times more than any other group of elements).
+Surprisingly, the total amount of food consumption in Switzerland did not have any noticeable changes during the last 50 years. On the other hand, the proportion for each group of products show that swiss people consume a lot of milk products (around 3 times more than any other group of elements).
 
-Since there is no flagrant difference in the total amount of consumption over the years, it is interesting to look at the evolution of the import and the production in Switzerland. Importation has quite a lot increased during the last half century by almost doubling the total amount but the amount of production remains stable across the years. This is explained by the increase of the population, from 5.4 millions to 8.1 millions of swiss.
+Since there is no flagrant difference in the total amount of consumption over the years, it is interesting to look at the evolution of the import and the production in Switzerland. Importation has increased quite a lot during the last half century by almost doubling the total amount but the amount of production remains stable across the years. This is explained by the increase of the population, from 5.4 millions to 8.1 millions of swiss citizens.
 
-Thanks to the heatmap on the percentage change for every 10 years, we can clearly observe the evolution for each group of products for the food consumption, the import quantity and the production quantity.  
+Thanks to the heatmap on the percentage change for every 10 years, we can clearly observe the evolution for each group of products for the food consumption, the import quantity and the production quantity.
 
 <figure class="highcharts-figure">
   <div id="pct_change_by_years"></div>
@@ -60,7 +62,7 @@ Thanks to the heatmap on the percentage change for every 10 years, we can clearl
   <button class="button" id="production_pct">Production</button>
 </figure>
 
-For the consumption, there is some tendencies as a diminution of the meat consumption for the last 30 years and an augmentation in the consumption of the vegetables. Are these tendencies in the favour of the environment ?
+For the consumption, there is some tendencies, as a diminution of the meat consumption for the last 30 years and an augmentation in the consumption of the vegetables. Are these tendencies in the favor of the environment ?
 
 An other interesting fact is the proportion between the import quantity and the production for each of the groups of products in Switzerland. In 2013, there is a very large percentage in the production of meat and milk in Switzerland and the only category where the importation is much higher is the fruits.
 
@@ -104,7 +106,7 @@ For this reason we only study here the most recent data to obtain results that r
 
 To decide whether the importations have a clear impact on our society or not, we will introduce another parameter: the producer price which is the money received to farmers after the production of their products. When looking further into the «sunburst»,  maize appears to have diverse origins of importations, high importation quantity and  varying quantity of importations over time. Let’s then analyse it and dive into the maize world …
 
-To have a worldwide representation of maize producer price, we decided to compare it’s Switzerland price with different country groups, from lower to upper income economies.  This notion is shown in the plot below where we notice a high producer price in Switzerland compare to the different groups around 1991-1996, as the height of the Switzerland (black) area is much bigger than the country groups. Then progressively, over the years we notice a balance producer prices between all countries and Switzerland; upper middle income countries prices are even getting higher.
+To have a worldwide representation of the maize producer price, we decided to compare its Switzerland price with different country groups, from lower to upper income economies.  This notion is shown in the plot below where we notice a high producer price in Switzerland compare to the different groups around 1991-1996, as the height of the Switzerland (black) area is much bigger than the country groups. Then progressively, over the years we notice a balance producer prices between all countries and Switzerland; upper middle income countries prices are even getting higher.
 Is it because Switzerland prices fall of or because countries groups prices went up, or both ?
 
 <figure class="highcharts-figure">
@@ -123,15 +125,15 @@ But how could we explain such a phenomenon since Swiss people still like food an
 A possible explication lies in the next plot where we compare the evolution of the quantity of importation/exportation of maize in Switzerland with the producer prices.
 In this plot, we normalized the prices with the inflation rate since we do not want that a increase in the general price level of goods and services involves a increase in the producer price.
 Even if the quantity of imported maize is way more than the exported one, we still can observe an increasing of the producer prices when there is fast increase of the exportation. It appears around year 2002.
-But what could  be the long term reason for a decreasing maize producer price in Switzerland is the increase of their imported quantity over the 15 last years. Indeed, the quantity of imported maize increased by a bit less than 400%  which place the maize importation at one of the most imported Item in 2017. We can see it when looking at the sunburst plot.
+But what could  be the long term reason for a decreasing maize producer price in Switzerland is the increase of their imported quantity over the 15 last years. Indeed, the quantity of imported maize increased by a bit less than 400% which place the maize importation at one of the most imported Item in 2017. We can see it when looking at the sunburst plot.
 
 <figure class="highcharts-figure">
   <div id="price_import_pct"></div>
 </figure>
 
-## Impact on environment
+## Impact on the environment
 
-For the sake of studying the Swiss Food carbon footprint, we base our analysis on the most consumed ingredients in the country regrouped together to form the following pie chart where we present a description of what is the part of each group of ingredients is taking in carbon emissions.
+For the sake of studying the Swiss Food carbon footprint, we base our analysis on the most consumed ingredients in the country regrouped together to form the following pie chart in which we present a description of the carbon emissions of each ingredient group.
 
 
 <figure class="highcharts-figure">
@@ -139,12 +141,19 @@ For the sake of studying the Swiss Food carbon footprint, we base our analysis o
 </figure>
 
 
-2.5 tonnes per person each year is a shocking number, indeed we didn't expect to see this result as the meat is known to be the most CO2 carbon releasing.
+The number 2.5 tonnes per person each year is a shocking number, indeed we didn't expect to see this result as the meat is known to be the most CO2 carbon releasing.
 It is interesting to see how the dependence on the milk products in Switzerland can have a serious impact on the environment. We need to mention that to generate those numbers we use the amount of food that is available to the swiss industry and to the population. This way, the fact that there's more food supplied to the market than the consumers need is taken into consideration
 
 Following up with the previous analysis on the food consumption, it is true that we eat more and more fruits and vegetables and less meat but with the above result we discover that this new meat banning trend is definitely not enough to reduce the swiss carbon footprint. The milk industry is the one to fight since the production, transport, conservation and distribution of the milk and its products is high energy demanding.
 
-And on this bombshell it is time to end this discussion …
+
+
+## References
+
+For the food carbon emissions data, we had access to Eaternity database that was offered to us by Manuel Klarmann, founder & CEO of the eponym project. We deeply thank him for this contribution to our project.
+
+
+
 
 <script>
   var chart = Highcharts.chart('evolution_by_years', {
